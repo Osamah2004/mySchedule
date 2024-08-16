@@ -1,172 +1,21 @@
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100vh;
-    background-color: #282c34;
-    color: #61dafb;
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    overflow: auto;
+th {
+    background: #bacbe6 !important;
 }
 
 hr {
-    width: 100%;
-    border: 2px solid #191c21;
+    border: 1px solid white !important;
+    opacity: 1;
+    /* Add this line to ensure full opacity */
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto;
-    background-color: #3c4048;
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    gap: 10px; /* Adjust the gap between buttons */
-}
-  
-
-
-button:hover {
-    background-color: #21a1f1;
-}
-.filename-container {
-    display: flex;
-    margin-top: 20px;
-    background-color: #3c4048;
-    padding: 10px;
-    gap: 5px; /* Adjust the gap between buttons */
-    border-radius: 5px;
-}
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
-}
-table {
-    border-collapse: collapse;
-    width: auto;
-    margin: 20px 0;
-    font-size: 18px;
-    text-align: left;
-}
-
-th, td {
-    border: 2px solid #00eeff; /* Light blue border for cells */
-    padding: 12px 15px;
-}
-
-th {
-    background-color: #07576b; /* Darker background for header */
-    color: #ffffff;
-    text-align: center;
-}
-
-td {
-    background-color: #3c4048; /* Consistent background for cells */
-    color: #ffffff;
-}
-
-tr:nth-child(even) td {
-    background-color: #282c34; /* Alternating row color */
-}
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #ffffff;
-    background-color: #07576b;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.4s ease;
-}
-input, select, pre {
-    font-size: 16px;
-    color: #ffffff;
-    background-color: #3c4048;
-    border: 1px solid #61dafb;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 10px;
-}
-input:focus::placeholder {
-    color: transparent;
-}
-select:focus, input:focus {
-    outline: none;
-    box-shadow: 0 0 10px #61dafb;
-}
-select option {
-    background-color: #282c34;
-    color: #5bd8fa;
-}
-#results {
-    border: 1px solid #ffffff;
-    display: none;
-    max-height: 150px;
-    overflow-y: auto;
-}
 a {
-    margin: 0;
-    color: #00ff00;
-    padding: 5px;
+    color: brown !important;
 }
+
 a:hover {
-    color: #c5ff05;
+    color: #6ea8fe !important;
 }
-button.red {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    background-color: #730000; /* Darker Red */
-    margin: 10px;
-    cursor: pointer;
-    transition: background-color 0.4s ease;
-}
-button.red:hover {
-    background-color: #ff0000; /* Red */
-}
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
-        padding: 10px;
-    }
 
-    .grid-container {
-        grid-template-columns: 1fr;
-        padding: 5px;
-    }
-
-    button {
-        padding: 8px 15px;
-        font-size: 14px;
-    }
-
-    table {
-        font-size: 14px;
-    }
-
-    th,
-    td {
-        padding: 8px 10px;
-    }
-
-    .container {
-        padding: 10px;
-    }
-
-    #snackbar {
-        min-width: 200px;
-        margin-left: -100px;
-        top: 20px;
-        padding: 12px;
-    }
-}
 #snackbar {
     visibility: hidden;
     /* Hidden by default. Visible on click */

@@ -110,7 +110,7 @@ function markCell(){
         period--;
     }
     if (!(day > 4 || period == 0)){
-        document.getElementById(`${dayName}${period}`).style.backgroundColor = "#0346ff";
+        document.getElementById(`${dayName}${period}`).classList.add("bg-success")
     }
 }
 
@@ -205,5 +205,4 @@ var x = setInterval(function () {
 document.getElementById('nextLec').textContent = "المحاضرة القادمة : " + nextLec;
 document.getElementById('homeworks').textContent = "الواجبات والمشاريع : " + "لا يوجد";
 
-debugger;
 markCell()
