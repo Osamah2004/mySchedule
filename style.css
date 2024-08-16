@@ -131,7 +131,42 @@ button.red {
 button.red:hover {
     background-color: #ff0000; /* Red */
 }
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        padding: 10px;
+    }
 
+    .grid-container {
+        grid-template-columns: 1fr;
+        padding: 5px;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 8px 10px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    #snackbar {
+        min-width: 200px;
+        margin-left: -100px;
+        top: 20px;
+        padding: 12px;
+    }
+}
 #snackbar {
     visibility: hidden;
     /* Hidden by default. Visible on click */
