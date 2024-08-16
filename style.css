@@ -1,0 +1,220 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    background-color: #282c34;
+    color: #61dafb;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    overflow: auto;
+}
+
+hr {
+    width: 100%;
+    border: 2px solid #191c21;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: #3c4048;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    gap: 10px; /* Adjust the gap between buttons */
+}
+  
+
+
+button:hover {
+    background-color: #21a1f1;
+}
+.filename-container {
+    display: flex;
+    margin-top: 20px;
+    background-color: #3c4048;
+    padding: 10px;
+    gap: 5px; /* Adjust the gap between buttons */
+    border-radius: 5px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+table {
+    border-collapse: collapse;
+    width: auto;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+th, td {
+    border: 2px solid #00eeff; /* Light blue border for cells */
+    padding: 12px 15px;
+}
+
+th {
+    background-color: #07576b; /* Darker background for header */
+    color: #ffffff;
+    text-align: center;
+}
+
+td {
+    background-color: #3c4048; /* Consistent background for cells */
+    color: #ffffff;
+}
+
+tr:nth-child(even) td {
+    background-color: #282c34; /* Alternating row color */
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #07576b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+}
+input, select, pre {
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #3c4048;
+    border: 1px solid #61dafb;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+}
+input:focus::placeholder {
+    color: transparent;
+}
+select:focus, input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #61dafb;
+}
+select option {
+    background-color: #282c34;
+    color: #5bd8fa;
+}
+#results {
+    border: 1px solid #ffffff;
+    display: none;
+    max-height: 150px;
+    overflow-y: auto;
+}
+a {
+    margin: 0;
+    color: #00ff00;
+    padding: 5px;
+}
+a:hover {
+    color: #c5ff05;
+}
+button.red {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    background-color: #730000; /* Darker Red */
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+}
+button.red:hover {
+    background-color: #ff0000; /* Red */
+}
+
+#snackbar {
+    visibility: hidden;
+    /* Hidden by default. Visible on click */
+    min-width: 250px;
+    /* Set a default minimum width */
+    margin-left: -125px;
+    /* Divide value of min-width by 2 */
+    background-color: #333;
+    /* Black background color */
+    color: #fff;
+    /* White text color */
+    text-align: center;
+    /* Centered text */
+    border-radius: 2px;
+    /* Rounded borders */
+    padding: 16px;
+    /* Padding */
+    position: fixed;
+    /* Sit on top of the screen */
+    z-index: 1;
+    /* Add a z-index if needed */
+    left: 50%;
+    /* Center the snackbar */
+    top: 30px;
+    /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+.show {
+    visibility: visible !important;
+    /* Show the snackbar */
+
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        top: 30px;
+        opacity: 1;
+    }
+
+    to {
+        top: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        top: 30px;
+        opacity: 1;
+    }
+
+    to {
+        top: 0;
+        opacity: 0;
+    }
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="snackbar"></div>
+    <h1>تصميم وإنشاء البرمجيات</h1>
+    <hr>
+    <h1>الدكاترة</h1>
+    <table>
+        <tr>
+            <th>النشاط</th>
+            <th>الإسم</th>
+            <th>الإيميل</th>
+            <th>الجدول</th>
+            <th>تقييم الدكتور</th>
+        </tr>
+        <tr>
+            <th>النظري</th>
+            <td>
+                <a href="https://uqu.edu.sa/adharthi/App/CV">
+                    أحمد دخيل الله الحارثي
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="copyThenSnackbar('adharthi@uqu.edu.sa')">
+                    adharthi@uqu.edu.sa
+                </a>
+            </td>
+            <td><a href="https://uqu.edu.sa/adharthi/App/OfficeHours/">جدول الدكتور</a></td>
+            <td><a href="https://qeeem.com/uqu/tdgxe">تقييم الدكتور</a></td>
+        </tr>
+        <tr>
+            <th>العملي</th>
+            <td>
+                <a href="https://uqu.edu.sa/imdaghistani/App/CV">
+                    اسماعيل محمد الداغستاني
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="copyThenSnackbar('imdaghistani@uqu.edu.sa')">
+                    imdaghistani@uqu.edu.sa
+                </a>
+            </td>
+            <td><a href="https://uqu.edu.sa/imdaghistani/App/OfficeHours/">جدول الدكتور</a></td>
+            <td><a href="https://qeeem.com/uqu/q4wwq">تقييم الدكتور</a></td>
+        </tr>
+    </table>
+    <hr>
+    <h1>المحاضرات السابقة</h1><h2>نظري</h2>
+    <table>
+        <tr>
+            <th>رقم المحاضرة</th>
+            <th>موضوع المحاضرة</th>
+            <th>ملخص للمحاضرة</th>
+            <th>تاريخ القاؤها</th>
+            <th>وقت التحضير</th>
+            <th>اسئلة تدريبية</th>
+        </tr>
+        <tr>
+            <td>الأولى</td>
+            <td>؟؟؟</td>
+            <td>؟؟؟</td>
+            <td>18/8/2024</td>
+            <td>؟؟؟</td>
+            <td>؟؟؟</td>
+        </tr>
+    </table>
+    <h2>عملي</h2>
+    <table>
+        <tr>
+            <th>رقم المحاضرة</th>
+            <th>موضوع المحاضرة</th>
+            <th>ملخص للمحاضرة</th>
+            <th>تاريخ القاؤها</th>
+            <th>وقت التحضير</th>
+            <th>اسئلة تدريبية</th>
+        </tr>
+        <tr>
+            <td>الأولى</td>
+            <td>؟؟؟</td>
+            <td>؟؟؟</td>
+            <td>22/8/2024</td>
+            <td>؟؟؟</td>
+            <td>؟؟؟</td>
+        </tr>
+    </table>
+    <hr>
+    <h1>تقسيم الدرجات</h1>
+    <table style="width: auto;">
+        <tr>
+            <td>نهائي</td>
+            <td>؟؟؟</td>
+        </tr>
+        <tr>
+            <td>نصفي</td>
+            <td>؟؟؟</td>
+        </tr>
+        <tr>
+            <td>كويزات</td>
+            <td>؟؟؟</td>
+        </tr>
+        <tr>
+            <td>عملي</td>
+            <td>؟؟؟</td>
+        </tr>
+    </table>
+    <script>
+
+        function snackbar() {
+                var x = document.getElementById("snackbar")
+                x.textContent = "تم اللصق الى الحافظة";
+                // Add the "show" class to DIV
+                x.className = "show";
+
+                // After 3 seconds, remove the show class from DIV
+                setTimeout(function () { x.className = x.className.replace("show", "");}, 3000);
+            }
+        function copyThenSnackbar(email) {
+            navigator.clipboard.writeText(email).then(snackbar());
+        }
+    </script>
+</body>
+</html>

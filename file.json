@@ -1,0 +1,36 @@
+{
+    "schedule" : [
+        {
+            "ar": "اختبار البرمجيات نظري",
+            "Day": "wed",
+            "dayNum": 3,
+            "Start": 5,
+            "Time" : 13,
+            "Single": false
+        },
+        {
+            "ar": "اختبار البرمجيات عملي",
+            "Day": "tue",
+            "dayNum": 2,
+            "Start": 1,
+            "Time": 8,
+            "Single": false
+        },
+        {
+            "ar": "تصميم وإنشاء 2 نظري",
+            "Day": "sun",
+            "dayNum": 0,
+            "Start": 1,
+            "Time": 8,
+            "Single": false
+        },
+        {
+            "ar": "تصميم وإنشاء 2 عملي",
+            "Day": "thu",
+            "dayNum": 4,
+            "Start": 1,
+            "Time": 8,
+            "Single": false
+        }
+    ]
+}
