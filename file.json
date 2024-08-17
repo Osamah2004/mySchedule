@@ -1,4 +1,54 @@
 {
+    "subjects" : [
+        {
+            "name": "تصميم و إنشاء البرمجيات 2",
+            "hasPractical" : true,
+            "theoreticalPart": {
+                "name": "أحمد دخيل الله الحارثي",
+                "email": "adharthi",
+                "qeemId": "tdgxe"
+            },
+            "practicalPart": {
+                "name": "اسماعيل محمد الداغستاني",
+                "email": "imdaghistani",
+                "qeemId": "q4wwq"
+            },
+            "syllabus" : {
+                "نهائي" : 0,
+                "ميد" : 0,
+                "كويز" : 0,
+                "عملي" : 0
+            },
+            "theoreticalLectures" : [
+                {"topic" : "-","summary" : "#","date" : "18/8/2024","attendanceTime": "-","quiz": "#"}
+            ],
+            "practicalLectures" : [
+                {"topic" : "-","summary" : "#","date" : "22/8/2024","attendanceTime": "-","quiz": "#"}
+            ]
+        },
+        {
+            "name": "اختبار البرمجيات",
+            "hasPractical" : true,
+            "theoreticalPart": {
+                "name": "باسم يوسف الكاظمي",
+                "email": "bykazemi",
+                "qeemId": "tdijv"
+            },
+            "practicalPart": "#",
+            "syllabus": {
+                "نهائي": 0,
+                "ميد": 0,
+                "كويز": 0,
+                "عملي": 0
+            },
+            "theoreticalLectures" : [
+                {"topic" : "-","summary" : "#","date" : "20/8/2024","attendanceTime": "-","quiz": "#"}
+            ],
+            "practicalLectures" : [
+                {"topic" : "-","summary" : "#","date" : "21/8/2024","attendanceTime": "-","quiz": "#"}
+            ]
+        }
+    ],
     "schedule" : [
         {
             "ar": "اختبار البرمجيات نظري",
@@ -32,5 +82,6 @@
             "Time": 8,
             "Single": false
         }
-    ]
+    ],
+    "version" : 5
 }

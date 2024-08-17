@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark" lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <div id="snackbar"></div>
+        <h1 id="subjectName" class="text-bg-primary rounded">تصميم وإنشاء البرمجيات</h1>
+        <hr>
+        <h1 id="doctors" class="text-bg-primary rounded">الدكاترة</h1>
+        <div class="table-responsive-sm">
+
+            <table id="doctorTable" class="table table-info table-bordered">
+                <tr>
+                    <th>النشاط</th>
+                    <th>الإسم</th>
+                    <th>الإيميل</th>
+                    <th>الجدول</th>
+                    <th>تقييم الدكتور</th>
+                </tr>
+                <tr>
+                    <th id="theoCell">النظري</th>
+                    <td>
+                        <a id="theoName" href="https://uqu.edu.sa/adharthi/App/CV">
+                            أحمد دخيل الله الحارثي
+                        </a>
+                    </td>
+                    <td>
+                        <a id="theoEmail" href="#" onclick="copyThenSnackbar('adharthi@uqu.edu.sa')">
+                            adharthi@uqu.edu.sa
+                        </a>
+                    </td>
+                    <td><a id="theoSchedule" href="https://uqu.edu.sa/adharthi/App/OfficeHours/">جدول الدكتور</a></td>
+                    <td><a id="theoRates" href="https://qeeem.com/uqu/tdgxe">تقييم الدكتور</a></td>
+                </tr>
+                <tr id="pracRow">
+                    <th>العملي</th>
+                    <td>
+                        <a id="pracName" href="https://uqu.edu.sa/imdaghistani/App/CV">
+                            اسماعيل محمد الداغستاني
+                        </a>
+                    </td>
+                    <td>
+                        <a id="pracEmail" href="#" onclick="copyThenSnackbar('imdaghistani@uqu.edu.sa')">
+                            imdaghistani@uqu.edu.sa
+                        </a>
+                    </td>
+                    <td><a id="pracSchedule" href="https://uqu.edu.sa/imdaghistani/App/OfficeHours/">جدول الدكتور</a>
+                    </td>
+                    <td><a id="pracRates" href="https://qeeem.com/uqu/q4wwq">تقييم الدكتور</a></td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <h1 class="text-bg-primary rounded">المحاضرات السابقة</h1>
+        <h2>نظري</h2>
+        <div class="table-responsive-sm">
+            <table id="prevTheoLecs" class="table table-info table-bordered">
+                <tr>
+                    <th>رقم المحاضرة</th>
+                    <th>موضوع المحاضرة</th>
+                    <th>ملخص للمحاضرة</th>
+                    <th>تاريخ القاؤها</th>
+                    <th>وقت التحضير</th>
+                    <th>اسئلة تدريبية</th>
+                </tr>
+            </table>
+        </div>
+        <div id="prac">
+            <h2>عملي</h2>
+            <div class="table-responsive-sm">
+                <table id="prevPracLecs" class="table table-info table-bordered">
+                    <tr>
+                        <th>رقم المحاضرة</th>
+                        <th>موضوع المحاضرة</th>
+                        <th>ملخص للمحاضرة</th>
+                        <th>تاريخ القاؤها</th>
+                        <th>وقت التحضير</th>
+                        <th>اسئلة تدريبية</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <hr>
+        <h1 class="text-bg-primary rounded">تقسيم الدرجات</h1>
+        <div class="table-responsive-sm">
+            <table id="syllabus" class="table table-info table-bordered">
+                <tr>
+                    <th colspan="2">التقسيمة</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        const storedJsonString = localStorage.getItem("subjects");
+        const subject = JSON.parse(storedJsonString);
+
+        document.getElementById('subjectName').textContent = subject.name;
+
+        document.getElementById('theoName').textContent = subject.theoreticalPart.name;
+        document.getElementById('theoName').setAttribute('href',`https://uqu.edu.sa/${subject.theoreticalPart.email}/App/CV`);
+        
+        document.getElementById('theoEmail').textContent = subject.theoreticalPart.email+'@uqu.edu.sa';
+        document.getElementById('theoEmail').onclick = function () {
+            copyThenSnackbar(subject.theoreticalPart.email+'@uqu.edu.sa');
+        }
+        
+        document.getElementById('theoSchedule').setAttribute('href', `https://uqu.edu.sa/${subject.theoreticalPart.email}/App/OfficeHours/`);
+        document.getElementById('theoRates').setAttribute('href', `https://qeeem.com/uqu/${subject.theoreticalPart.qeemId}`);
+
+        if (subject.practicalPart == '#'){
+            document.getElementById('pracRow').style.visibility = 'collapse';
+            document.getElementById('theoCell').textContent = 'النظري مع العملي';
+            document.getElementById('doctors').textContent = 'الدكتور';
+        }
+        else {
+            document.getElementById('pracName').textContent = subject.practicalPart.name;
+            document.getElementById('pracName').setAttribute('href', `https://uqu.edu.sa/${subject.practicalPart.name}/App/CV`);
+
+            document.getElementById('pracEmail').textContent = subject.practicalPart.email + '@uqu.edu.sa';
+            document.getElementById('pracEmail').onclick = function () {
+                copyThenSnackbar(subject.theoreticalPart.email + '@uqu.edu.sa');
+            }
+            document.getElementById('pracSchedule').setAttribute('href', `https://uqu.edu.sa/${subject.practicalPart.name}/App/OfficeHours/`);
+            document.getElementById('pracRates').setAttribute('href', `https://qeeem.com/uqu/${subject.practicalPart.qeemId}`);
+
+        }
+        if (!subject.hasPractical){
+            document.getElementById('prac').style.visibility = 'hidden';
+        }
+/* 
+        debugger;
+         */
+        function syllabus(){
+            let table = document.getElementById('syllabus');
+            const element = subject.syllabus;
+            for (const key in element){
+                let row = table.insertRow();
+                var cell1 = row.insertCell();
+                var cell2 = row.insertCell();
+                cell1.innerHTML = key
+                cell2.innerHTML = element[key]
+            }
+        }
+        debugger;
+        syllabus();
+        function addRow(element,id,index){
+            var table = id;
+            var row = table.insertRow();
+            var cellIndex = row.insertCell();
+            cellIndex.innerHTML = index;
+            for (const key in element) {
+                var cell = row.insertCell();
+                /*
+                cell.innerHTML = element[key];
+                */
+                debugger;
+                if (['summary','quiz'].includes(key)){
+                    if (element[key] != '#'){
+                        cell.innerHTML = `<a href='${element[key]}'>الرابط</a>`
+                    }
+                    else cell.innerHTML = `-`
+                }
+                else cell.innerHTML = element[key]; 
+            }
+
+        }
+        let table1 = document.getElementById('prevTheoLecs');
+        let table2 = document.getElementById('prevPracLecs');
+        for (let i = 0; i < subject.theoreticalLectures.length; i++) {
+            const element = subject.theoreticalLectures[i];
+            addRow(element,table1,i+1)
+        }
+        debugger;
+        for (let i = 0; i < subject.practicalLectures.length; i++) {
+            const element = subject.practicalLectures[i];
+            addRow(element,table2,i+1)
+        }
+
+        function snackbar() {
+                var x = document.getElementById("snackbar")
+                x.textContent = "تم اللصق الى الحافظة";
+                // Add the "show" class to DIV
+                x.className = "show";
+
+                // After 3 seconds, remove the show class from DIV
+                setTimeout(function () { x.className = x.className.replace("show", "");}, 3000);
+            }
+        function copyThenSnackbar(email) {
+            navigator.clipboard.writeText(email).then(snackbar());
+        }
+    </script>
+</body>
+</html>

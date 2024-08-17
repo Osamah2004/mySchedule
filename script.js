@@ -15,6 +15,20 @@ function fetchJSONData() {
             });
     });
 }
+
+function choice(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+let dua = [
+    'سبحان الله وبحمده, سبحان العظيم',
+    'اللهم صل وسلم على سيدنا محمد',
+    'لا تنسى ذكر الله',
+    'لا إله إلا الله',
+    'لا حول ولا قوة إلا بالله',
+    'استغفر الله العلي العظيم من كل ذنب عظيم',
+    'لا اله إلا انت سبحانك اني كنت من الظالمين'
+]
+
 const now = new Date();
 const day = now.getDay();
 const hours = now.getHours();
@@ -119,6 +133,11 @@ let block2 = document.getElementById('block 2');
 let removedCells = []
 let lectureTimes = []
 
+function reload(){
+    localStorage.clear();
+    location.reload();
+}
+
 let minHours = 7 * 24;
 
 function lecture(subject){
@@ -130,17 +149,36 @@ function lecture(subject){
         element.remove();
     }
     document.getElementById(lecID).textContent = subject.ar;
+    document.getElementById(lecID).classList.add('bg-info');
+    document.getElementById(lecID).classList.add('text-white');
 }
 
-
+let version = localStorage.getItem('version');
+if (version == null){
 fetchJSONData()
     .then((object) => {
         localStorage.setItem('jsonFile', JSON.stringify(object))
+        localStorage.setItem('version', object.version);
+        snackbar('أعد تحميل هذه الصفحة');
     })
     .catch((error) => {
         console.error("Unable to fetch data:", error);
     });
-localStorage.clear
+}
+else {
+    snackbar(choice(dua));
+}
+fetchJSONData()
+    .then((object) => {
+        if (version != object.version){
+            localStorage.setItem('jsonFile', JSON.stringify(object))
+            localStorage.setItem('version',object.version)
+            snackbar('أعد تحميل الصفحة');
+        }
+    })
+    .catch((error) => {
+        console.error("Unable to fetch data:", error);
+    });
 let parsedJson = JSON.parse(localStorage.getItem('jsonFile'));
 
 let nextLec;
@@ -205,4 +243,21 @@ var x = setInterval(function () {
 document.getElementById('nextLec').textContent = "المحاضرة القادمة : " + nextLec;
 document.getElementById('homeworks').textContent = "الواجبات والمشاريع : " + "لا يوجد";
 
+function snackbar(text) {
+    var x = document.getElementById("snackbar")
+    x.textContent = text;
+    // Add the "show" class to DIV
+    x.className = "show";
+
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+}
+
 markCell()
+
+function goToPage(index) {
+    localStorage.setItem('subjects', JSON.stringify(parsedJson.subjects[index]));
+    location.href = 'subject.html'
+}
+
+console.log(parsedJson.subjects);

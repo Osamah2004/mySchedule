@@ -13,9 +13,11 @@
 <body>
     <div class="container mt-3">
 
+        <div id="snackbar"></div>
+
             <div class="mt-4 p-5 bg-primary rounded">
                 <p id="nextLec"></p>
-                <p id="timeToNextLec"></p>
+                <p id="timeToNextLec">الوقت المتبقي للمحاضرة القادمة :</p>
                 <p id="homeworks"></p>
             </div>
             
@@ -23,8 +25,8 @@
         <hr>
         <h1 class="text-bg-primary rounded">المقررات المسجلة</h1>
         <div class="btn-group">
-            <h4><button class="btn btn-outline-light" onclick="location.href='subject1.html'">تصميم وإنشاء البرمجيات</button></h4>
-            <h4><button class="btn btn-outline-light" onclick="location.href='subject2.html'">اختبار البرمجيات</button></h4>
+            <h4><button class="btn btn-outline-light" onclick="goToPage(0)">تصميم وإنشاء البرمجيات</button></h4>
+            <h4><button class="btn btn-outline-light" onclick="goToPage(1)">اختبار البرمجيات</button></h4>
         </div>
         <hr>
         <h1 class="text-bg-primary rounded">الجدول</h1>
@@ -42,7 +44,7 @@
                 </thead>
 
                 <tr>
-                    <th>1</th>
+                    <th>8 ص</th>
                     <td id="sun1"></td>
                     <td id="mon1"></td>
                     <td id="tue1"></td>
@@ -50,7 +52,7 @@
                     <td id="thu1"></td>
                 </tr>
                 <tr>
-                    <th>2</th>
+                    <th>9 ص</th>
                     <td id="sun2"></td>
                     <td id="mon2"></td>
                     <td id="tue2"></td>
@@ -58,7 +60,7 @@
                     <td id="thu2"></td>
                 </tr>
                 <tr>
-                    <th>3</th>
+                    <th>10 ص</th>
                     <td id="sun3"></td>
                     <td id="mon3"></td>
                     <td id="tue3"></td>
@@ -66,7 +68,7 @@
                     <td id="thu3"></td>
                 </tr>
                 <tr>
-                    <th>4</th>
+                    <th>11 ص</th>
                     <td id="sun4"></td>
                     <td id="mon4"></td>
                     <td id="tue4"></td>
@@ -74,7 +76,7 @@
                     <td id="thu4"></td>
                 </tr>
                 <tr>
-                    <th>5</th>
+                    <th>1 م</th>
                     <td id="sun5"></td>
                     <td id="mon5"></td>
                     <td id="tue5"></td>
@@ -82,7 +84,7 @@
                     <td id="thu5"></td>
                 </tr>
                 <tr>
-                    <th>6</th>
+                    <th>2 م</th>
                     <td id="sun6"></td>
                     <td id="mon6"></td>
                     <td id="tue6"></td>
@@ -90,7 +92,7 @@
                     <td id="thu6"></td>
                 </tr>
                 <tr>
-                    <th>7</th>
+                    <th>4 م</th>
                     <td id="sun7"></td>
                     <td id="mon7"></td>
                     <td id="tue7"></td>
@@ -98,7 +100,7 @@
                     <td id="thu7"></td>
                 </tr>
                 <tr>
-                    <th>8</th>
+                    <th>5 م</th>
                     <td id="sun8"></td>
                     <td id="mon8"></td>
                     <td id="tue8"></td>
@@ -106,7 +108,7 @@
                     <td id="thu8"></td>
                 </tr>
                 <tr>
-                    <th>9</th>
+                    <th>6 م</th>
                     <td id="sun9"></td>
                     <td id="mon9"></td>
                     <td id="tue9"></td>
@@ -114,7 +116,7 @@
                     <td id="thu9"></td>
                 </tr>
                 <tr>
-                    <th>10</th>
+                    <th>7 م</th>
                     <td id="sun10"></td>
                     <td id="mon10"></td>
                     <td id="tue10"></td>
@@ -122,7 +124,7 @@
                     <td id="thu10"></td>
                 </tr>
                 <tr>
-                    <th>11</th>
+                    <th>8 م</th>
                     <td id="sun11"></td>
                     <td id="mon11"></td>
                     <td id="tue11"></td>
@@ -130,7 +132,7 @@
                     <td id="thu11"></td>
                 </tr>
                 <tr>
-                    <th>12</th>
+                    <th>9 م</th>
                     <td id="sun12"></td>
                     <td id="mon12"></td>
                     <td id="tue12"></td>

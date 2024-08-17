@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html data-bs-theme="dark" lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,102 +11,105 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Document</title>
 </head>
+
 <body>
     <div class="container mt-3">
-    <div id="snackbar"></div>
-    <h1 class="text-bg-primary rounded">تصميم وإنشاء البرمجيات</h1>
-    <hr>
-    <h1 class="text-bg-primary rounded">الدكاترة</h1>
-    <div class="table-responsive-sm">
-
-        <table class="table table-info table-bordered">
-            <tr>
-                <th>النشاط</th>
-                <th>الإسم</th>
-                <th>الإيميل</th>
-                <th>الجدول</th>
-                <th>تقييم الدكتور</th>
-            </tr>
-        <tr>
-            <th>النظري</th>
-                <td>
-                   <a  href="https://uqu.edu.sa/adharthi/App/CV">
-                       أحمد دخيل الله الحارثي
-                   </a>
-                </td>
-            <td>
-                <a href="#" onclick="copyThenSnackbar('adharthi@uqu.edu.sa')">
-                    adharthi@uqu.edu.sa
-                </a>
-            </td>
-            <td><a href="https://uqu.edu.sa/adharthi/App/OfficeHours/">جدول الدكتور</a></td>
-            <td><a href="https://qeeem.com/uqu/tdgxe">تقييم الدكتور</a></td>
-        </tr>
-        <tr>
-            <th>العملي</th>
-            <td>
-                <a href="https://uqu.edu.sa/imdaghistani/App/CV">
-                    اسماعيل محمد الداغستاني
-                </a>
-            </td>
-            <td>
-                <a href="#" onclick="copyThenSnackbar('imdaghistani@uqu.edu.sa')">
-                    imdaghistani@uqu.edu.sa
-                </a>
-            </td>
-            <td><a href="https://uqu.edu.sa/imdaghistani/App/OfficeHours/">جدول الدكتور</a></td>
-            <td><a href="https://qeeem.com/uqu/q4wwq">تقييم الدكتور</a></td>
-        </tr>
-        </table>
-    </div>
-    <hr>
-    <h1 class="text-bg-primary rounded">المحاضرات السابقة</h1>
-    <h2>نظري</h2>
-    <div class="table-responsive-sm">
-        <table class="table table-info table-bordered">
-            <tr>
-                <th>رقم المحاضرة</th>
-                <th>موضوع المحاضرة</th>
-                <th>ملخص للمحاضرة</th>
-                <th>تاريخ القاؤها</th>
-                <th>وقت التحضير</th>
-                <th>اسئلة تدريبية</th>
-            </tr>
-            <tr>
-                <td>الأولى</td>
-                <td>؟؟؟</td>
-                <td>؟؟؟</td>
-                <td>18/8/2024</td>
-                <td>؟؟؟</td>
-                <td>؟؟؟</td>
-            </tr>
-        </table>
-    </div>
-    <h2>عملي</h2>
-    <div class="table-responsive-sm">
-        <table class="table table-info table-bordered">
-            <tr>
-                <th>رقم المحاضرة</th>
-                <th>موضوع المحاضرة</th>
-                <th>ملخص للمحاضرة</th>
-                <th>تاريخ القاؤها</th>
-                <th>وقت التحضير</th>
-                <th>اسئلة تدريبية</th>
-            </tr>
-            <tr>
-                <td>الأولى</td>
-                <td>؟؟؟</td>
-                <td>؟؟؟</td>
-                <td>22/8/2024</td>
-                <td>؟؟؟</td>
-                <td>؟؟؟</td>
-            </tr>
-        </table>
-    </div>
-    <hr>
-    <h1 class="text-bg-primary rounded">تقسيم الدرجات</h1>
+        <div id="snackbar"></div>
+        <h1 id="subjectName" class="text-bg-primary rounded">تصميم وإنشاء البرمجيات</h1>
+        <hr>
+        <h1 id="doctors" class="text-bg-primary rounded">الدكاترة</h1>
         <div class="table-responsive-sm">
-            <table class="table table-info table-bordered">
+
+            <table id="doctorTable" class="table table-info table-bordered">
+                <tr>
+                    <th>النشاط</th>
+                    <th>الإسم</th>
+                    <th>الإيميل</th>
+                    <th>الجدول</th>
+                    <th>تقييم الدكتور</th>
+                </tr>
+                <tr>
+                    <th>النظري</th>
+                    <td>
+                        <a id="theoName" href="https://uqu.edu.sa/adharthi/App/CV">
+                            أحمد دخيل الله الحارثي
+                        </a>
+                    </td>
+                    <td>
+                        <a id="theoEmail" href="#" onclick="copyThenSnackbar('adharthi@uqu.edu.sa')">
+                            adharthi@uqu.edu.sa
+                        </a>
+                    </td>
+                    <td><a id="theoSchedule" href="https://uqu.edu.sa/adharthi/App/OfficeHours/">جدول الدكتور</a></td>
+                    <td><a id="theoRates" href="https://qeeem.com/uqu/tdgxe">تقييم الدكتور</a></td>
+                </tr>
+                <tr id="pracRow">
+                    <th>العملي</th>
+                    <td>
+                        <a id="pracName" href="https://uqu.edu.sa/imdaghistani/App/CV">
+                            اسماعيل محمد الداغستاني
+                        </a>
+                    </td>
+                    <td>
+                        <a id="pracEmail" href="#" onclick="copyThenSnackbar('imdaghistani@uqu.edu.sa')">
+                            imdaghistani@uqu.edu.sa
+                        </a>
+                    </td>
+                    <td><a id="pracSchedule" href="https://uqu.edu.sa/imdaghistani/App/OfficeHours/">جدول الدكتور</a></td>
+                    <td><a id="pracRates" href="https://qeeem.com/uqu/q4wwq">تقييم الدكتور</a></td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <h1 class="text-bg-primary rounded">المحاضرات السابقة</h1>
+        <h2>نظري</h2>
+        <div class="table-responsive-sm">
+            <table id="prevTheoLecs" class="table table-info table-bordered">
+                <tr>
+                    <th>رقم المحاضرة</th>
+                    <th>موضوع المحاضرة</th>
+                    <th>ملخص للمحاضرة</th>
+                    <th>تاريخ القاؤها</th>
+                    <th>وقت التحضير</th>
+                    <th>اسئلة تدريبية</th>
+                </tr>
+                <tr>
+                    <td>الأولى</td>
+                    <td>؟؟؟</td>
+                    <td>؟؟؟</td>
+                    <td>18/8/2024</td>
+                    <td>؟؟؟</td>
+                    <td>؟؟؟</td>
+                </tr>
+            </table>
+        </div>
+        <div id="prac">
+            <h2>عملي</h2>
+            <div class="table-responsive-sm">
+                <table class="table table-info table-bordered">
+                    <tr>
+                        <th>رقم المحاضرة</th>
+                        <th>موضوع المحاضرة</th>
+                        <th>ملخص للمحاضرة</th>
+                        <th>تاريخ القاؤها</th>
+                        <th>وقت التحضير</th>
+                        <th>اسئلة تدريبية</th>
+                    </tr>
+                    <tr>
+                        <td>الأولى</td>
+                        <td>؟؟؟</td>
+                        <td>؟؟؟</td>
+                        <td>22/8/2024</td>
+                        <td>؟؟؟</td>
+                        <td>؟؟؟</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <hr>
+        <h1 class="text-bg-primary rounded">تقسيم الدرجات</h1>
+        <div class="table-responsive-sm">
+            <table id="syllabus" class="table table-info table-bordered">
                 <tr>
                     <th colspan="2">التقسيمة</th>
                 </tr>
@@ -129,19 +133,22 @@
         </div>
     </div>
     <script>
-
+        const storedJsonString = localStorage.getItem("subjects");
+        const retrievedObject = JSON.parse(storedJsonString);
+        console.log(retrievedObject);
         function snackbar() {
-                var x = document.getElementById("snackbar")
-                x.textContent = "تم اللصق الى الحافظة";
-                // Add the "show" class to DIV
-                x.className = "show";
+            var x = document.getElementById("snackbar")
+            x.textContent = "تم اللصق الى الحافظة";
+            // Add the "show" class to DIV
+            x.className = "show";
 
-                // After 3 seconds, remove the show class from DIV
-                setTimeout(function () { x.className = x.className.replace("show", "");}, 3000);
-            }
+            // After 3 seconds, remove the show class from DIV
+            setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+        }
         function copyThenSnackbar(email) {
             navigator.clipboard.writeText(email).then(snackbar());
         }
     </script>
 </body>
+
 </html>
