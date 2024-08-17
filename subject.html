@@ -125,13 +125,13 @@
         }
         else {
             document.getElementById('pracName').textContent = subject.practicalPart.name;
-            document.getElementById('pracName').setAttribute('href', `https://uqu.edu.sa/${subject.practicalPart.name}/App/CV`);
+            document.getElementById('pracName').setAttribute('href', `https://uqu.edu.sa/${subject.practicalPart.email}/App/CV`);
 
             document.getElementById('pracEmail').textContent = subject.practicalPart.email + '@uqu.edu.sa';
             document.getElementById('pracEmail').onclick = function () {
-                copyThenSnackbar(subject.theoreticalPart.email + '@uqu.edu.sa');
+                copyThenSnackbar(subject.practicalPart.email + '@uqu.edu.sa');
             }
-            document.getElementById('pracSchedule').setAttribute('href', `https://uqu.edu.sa/${subject.practicalPart.name}/App/OfficeHours/`);
+            document.getElementById('pracSchedule').setAttribute('href', `https://uqu.edu.sa/${subject.practicalPart.email}/App/OfficeHours/`);
             document.getElementById('pracRates').setAttribute('href', `https://qeeem.com/uqu/${subject.practicalPart.qeemId}`);
 
         }
