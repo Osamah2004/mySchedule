@@ -14,13 +14,13 @@
                 "qeemId": "q4wwq"
             },
             "syllabus" : {
-                "نهائي" : 0,
-                "ميد" : 0,
-                "كويز" : 0,
-                "عملي" : 0
+                "نهائي" : 50,
+                "ميد" : 20,
+                "واجبات وكويزات" : 15,
+                "مشروع جماعي عملي" : 15
             },
             "theoreticalLectures" : [
-                {"topic" : "-","summary" : "#","date" : "18/8/2024","attendanceTime": "-","quiz": "#"}
+                {"topic" : "Introduction","summary" : "#","date" : "18/8/2024","attendanceTime": "9:06","quiz": "#"}
             ],
             "practicalLectures" : [
                 {"topic" : "-","summary" : "#","date" : "22/8/2024","attendanceTime": "-","quiz": "#"}
@@ -83,5 +83,5 @@
             "Single": false
         }
     ],
-    "version" : 5
+    "version" : 6
 }
