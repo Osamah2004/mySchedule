@@ -123,8 +123,17 @@ function markCell(){
     while (removedCells.includes(`${dayName}${period}`)){
         period--;
     }
+    for (let i = 0; i < canceledLectures.length; i++) {
+        const element = canceledLectures[i];
+        document.getElementById(element).classList.add("bg-danger");
+    }
     if (!(day > 4 || period == 0)){
-        document.getElementById(`${dayName}${period}`).classList.add("bg-success")
+        console.log(canceledLectures)
+        console.log(`${dayName}${period}`)
+        if (canceledLectures.includes(`${dayName}${period}`)) {
+            document.getElementById(`${dayName}${period}`).classList.add("bg-warning");
+        }
+        else document.getElementById(`${dayName}${period}`).classList.add("bg-success");
     }
 }
 
@@ -132,6 +141,7 @@ let block2 = document.getElementById('block 2');
 
 let removedCells = []
 let lectureTimes = []
+let canceledLectures = []
 
 function reload(){
     localStorage.clear();
@@ -182,13 +192,20 @@ fetchJSONData()
 let parsedJson = JSON.parse(localStorage.getItem('jsonFile'));
 
 let nextLec;
+let lecLocation;
 
 for (let i = 0; i < parsedJson.schedule.length; i++) {
     const element = parsedJson.schedule[i];
     let hoursToLecture = hoursUntilTarget(element.dayNum, element.Time);
+    if (element.isCanceled){
+        canceledLectures.push(`${element.Day}${element.Start}`)
+        lecture(element)
+        continue;
+    }
     if (hoursToLecture < minHours){
         minHours = hoursToLecture
         nextLec = element.ar;
+        lecLocation = element.location;
     }
     lecture(element)
 }
@@ -242,6 +259,7 @@ var x = setInterval(function () {
 
 document.getElementById('nextLec').textContent = "المحاضرة القادمة : " + nextLec;
 document.getElementById('homeworks').textContent = "الواجبات والمشاريع : " + "لا يوجد";
+document.getElementById('lecLocation').textContent = "قاعة المحاضرة القادمة: " + lecLocation;
 
 function snackbar(text) {
     var x = document.getElementById("snackbar")

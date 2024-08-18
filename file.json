@@ -2,7 +2,7 @@
     "subjects" : [
         {
             "name": "تصميم و إنشاء البرمجيات 2",
-            "hasPractical" : true,
+            "hasPractical": true,
             "theoreticalPart": {
                 "name": "أحمد دخيل الله الحارثي",
                 "email": "adharthi",
@@ -13,17 +13,29 @@
                 "email": "imdaghistani",
                 "qeemId": "q4wwq"
             },
-            "syllabus" : {
-                "نهائي" : 50,
-                "ميد" : 20,
-                "واجبات وكويزات" : 15,
-                "مشروع جماعي عملي" : 15
+            "syllabus": {
+                "نهائي": 50,
+                "ميد": 20,
+                "واجبات وكويزات": 15,
+                "مشروع جماعي عملي": 15
             },
-            "theoreticalLectures" : [
-                {"topic" : "Introduction","summary" : "#","date" : "18/8/2024","attendanceTime": "9:06","quiz": "#"}
+            "theoreticalLectures": [
+                {
+                    "topic": "Introduction",
+                    "summary": "#",
+                    "date": "18/8/2024",
+                    "attendanceTime": "9:06",
+                    "quiz": "#"
+                }
             ],
-            "practicalLectures" : [
-                {"topic" : "-","summary" : "#","date" : "22/8/2024","attendanceTime": "-","quiz": "#"}
+            "practicalLectures": [
+                {
+                    "topic": "-",
+                    "summary": "#",
+                    "date": "22/8/2024",
+                    "attendanceTime": "-",
+                    "quiz": "#"
+                }
             ]
         },
         {
@@ -53,14 +65,18 @@
         {
             "ar": "اختبار البرمجيات نظري",
             "Day": "wed",
+            "location": "ح103",
+            "isCanceled" : false,
             "dayNum": 3,
             "Start": 5,
             "Time" : 13,
             "Single": false
         },
         {
-            "ar": "اختبار البرمجيات عملي",
+            "ar": "اختبار البرمجيات عملي (ملغي)",
             "Day": "tue",
+            "location": "مع ح5",
+            "isCanceled": true,
             "dayNum": 2,
             "Start": 1,
             "Time": 8,
@@ -69,6 +85,8 @@
         {
             "ar": "تصميم وإنشاء 2 نظري",
             "Day": "sun",
+            "location": "ح104",
+            "isCanceled": false,
             "dayNum": 0,
             "Start": 1,
             "Time": 8,
@@ -77,11 +95,13 @@
         {
             "ar": "تصميم وإنشاء 2 عملي",
             "Day": "thu",
+            "location": "مع ح4",
+            "isCanceled": false,
             "dayNum": 4,
             "Start": 1,
             "Time": 8,
             "Single": false
         }
     ],
-    "version" : 6
+    "version" : 7
 }
