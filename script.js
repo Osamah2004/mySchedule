@@ -277,5 +277,39 @@ function goToPage(index) {
     localStorage.setItem('subjects', JSON.stringify(parsedJson.subjects[index]));
     location.href = 'subject.html'
 }
+for (let i = 0; i < parsedJson.subjects.length; i++) {
+    const element = parsedJson.subjects[i];
+    let id = 'subjects';
+    if (i > 2) {
+        id = 'subjects2'
+    }
+    document.getElementById(id).innerHTML += `<h4><button class="btn btn-outline-light" onclick="goToPage(${i})">${element.name}</button></h4>`;
+}
+if (parsedJson.assignments.length == 0){
+    document.getElementById('homeworksDiv').remove();
+}
+/* 
+{
+    "subject" : "واجب تجريبي",
+    "content" : "<a herf="www.youtube.com">واجب حرييييييقة من الفرن</a>",
+    "date" : 18/8/2024,
+    "mark" : 69
+}
+ */
+else for (let i = 0; i < parsedJson.assignments.length; i++) {
+    const element = parsedJson.assignments[i];
+    let table = document.getElementById('homeworksTable');
+    let row = table.insertRow();
+    let cell1 = row.insertCell();
+    cell1.innerHTML = element.subject;
+    
+    let cell2 = row.insertCell();
+    cell2.innerHTML = element.content;
+    
+    let cell3 = row.insertCell();
+    cell3.innerHTML = element.date;
 
-console.log(parsedJson.subjects);
+    let cell4 = row.insertCell();
+    cell4.innerHTML = element.mark;
+}
+console.log(parsedJson.assignments);

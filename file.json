@@ -1,5 +1,5 @@
 {
-    "subjects" : [
+    "subjects": [
         {
             "name": "تصميم و إنشاء البرمجيات 2",
             "hasPractical": true,
@@ -40,7 +40,7 @@
         },
         {
             "name": "اختبار البرمجيات",
-            "hasPractical" : true,
+            "hasPractical": true,
             "theoreticalPart": {
                 "name": "باسم يوسف الكاظمي",
                 "email": "bykazemi",
@@ -53,31 +53,145 @@
                 "كويز": 0,
                 "عملي": 0
             },
-            "theoreticalLectures" : [
-                {"topic" : "-","summary" : "#","date" : "20/8/2024","attendanceTime": "-","quiz": "#"}
+            "theoreticalLectures": [
+                {
+                    "topic": "-",
+                    "summary": "#",
+                    "date": "20/8/2024",
+                    "attendanceTime": "-",
+                    "quiz": "#"
+                }
             ],
-            "practicalLectures" : [
-                {"topic" : "-","summary" : "#","date" : "21/8/2024","attendanceTime": "-","quiz": "#"}
+            "practicalLectures": [
+                {
+                    "topic": "-",
+                    "summary": "#",
+                    "date": "21/8/2024",
+                    "attendanceTime": "-",
+                    "quiz": "#"
+                }
+            ]
+        },
+        {
+            "name": "هندسة تطبيقات الجوال",
+            "hasPractical": true,
+            "theoreticalPart": {
+                "name": "عبدالهادي محضار عيدروس",
+                "email": "ameidaroos",
+                "qeemId": "puq61"
+            },
+            "practicalPart": "#",
+            "syllabus": {
+                "نهائي": 0,
+                "ميد": 0,
+                "كويز": 0,
+                "عملي": 0
+            },
+            "theoreticalLectures": [
+                {
+                    "topic": "-",
+                    "summary": "#",
+                    "date": "1/1/2000",
+                    "attendanceTime": "-",
+                    "quiz": "#"
+                }
+            ],
+            "practicalLectures": [
+                {
+                    "topic": "-",
+                    "summary": "#",
+                    "date": "1/1/2000",
+                    "attendanceTime": "-",
+                    "quiz": "#"
+                }
+            ]
+        },
+        {
+            "name": "النماذج والطرق",
+            "hasPractical": false,
+            "theoreticalPart": {
+                "name": "سلمان زايد الحارثي",
+                "email": "szharthi",
+                "qeemId": "ya5fh"
+            },
+            "practicalPart": "#",
+            "syllabus": {
+                "نهائي": 0,
+                "ميد": 0,
+                "كويز": 0,
+                "عملي": 0
+            },
+            "theoreticalLectures": [
+                {
+                    "topic": "-",
+                    "summary": "#",
+                    "date": "1/1/2000",
+                    "attendanceTime": "-",
+                    "quiz": "#"
+                }
+            ],
+            "practicalLectures": [
+                {
+                    "topic": "-",
+                    "summary": "#",
+                    "date": "1/1/2000",
+                    "attendanceTime": "-",
+                    "quiz": "#"
+                }
+            ]
+        },
+        {
+            "name": "الرياضيات لهندسة البرمجيات",
+            "hasPractical": false,
+            "theoreticalPart": {
+                "name": "تركي محمد العنزي",
+                "email": "tmanzi",
+                "qeemId": "3dzph"
+            },
+            "practicalPart": "#",
+            "syllabus": {
+                "نهائي": 0,
+                "ميد": 0,
+                "كويز": 0,
+                "عملي": 0
+            },
+            "theoreticalLectures": [
+                {
+                    "topic": "-",
+                    "summary": "#",
+                    "date": "1/1/2000",
+                    "attendanceTime": "-",
+                    "quiz": "#"
+                }
+            ],
+            "practicalLectures": [
+                {
+                    "topic": "-",
+                    "summary": "#",
+                    "date": "1/1/2000",
+                    "attendanceTime": "-",
+                    "quiz": "#"
+                }
             ]
         }
     ],
-    "schedule" : [
+    "schedule": [
         {
             "ar": "اختبار البرمجيات نظري",
             "Day": "wed",
             "location": "ح103",
-            "isCanceled" : false,
+            "isCanceled": false,
             "dayNum": 3,
-            "Start": 5,
-            "Time" : 13,
+            "Start": 3,
+            "Time": 10,
             "Single": false
         },
         {
-            "ar": "اختبار البرمجيات عملي (ملغي)",
-            "Day": "tue",
-            "location": "مع ح5",
-            "isCanceled": true,
-            "dayNum": 2,
+            "ar": "اختبار البرمجيات عملي",
+            "Day": "sun",
+            "location": "مع ح4",
+            "isCanceled": false,
+            "dayNum": 0,
             "Start": 1,
             "Time": 8,
             "Single": false
@@ -88,20 +202,81 @@
             "location": "ح104",
             "isCanceled": false,
             "dayNum": 0,
-            "Start": 1,
-            "Time": 8,
+            "Start": 3,
+            "Time": 10,
             "Single": false
         },
         {
             "ar": "تصميم وإنشاء 2 عملي",
+            "Day": "tue",
+            "location": "???",
+            "isCanceled": false,
+            "dayNum": 2,
+            "Start": 5,
+            "Time": 13,
+            "Single": false
+        },
+        {
+            "ar": "الرياضيات لهندسة البرمجيات",
+            "Day": "mon",
+            "location": "ح103",
+            "isCanceled": false,
+            "dayNum": 1,
+            "Start": 5,
+            "Time": 13,
+            "Single": true
+        },
+        {
+            "ar": "النماذج والطرق",
+            "Day": "mon",
+            "location": "ح105",
+            "isCanceled": false,
+            "dayNum": 1,
+            "Start": 6,
+            "Time": 14,
+            "Single": true
+        },
+        {
+            "ar": "هندسة تطبيقات الجوال نظري",
+            "Day": "tue",
+            "location": "???",
+            "isCanceled": false,
+            "dayNum": 2,
+            "Start": 7,
+            "Time": 16,
+            "Single": false
+        },
+        {
+            "ar": "النماذج والطرق",
+            "Day": "wed",
+            "location": "ح105",
+            "isCanceled": false,
+            "dayNum": 3,
+            "Start": 5,
+            "Time": 13,
+            "Single": false
+        },
+        {
+            "ar": "هندسة تطبيقات الجوال عملي",
             "Day": "thu",
-            "location": "مع ح4",
+            "location": "مع ح5",
             "isCanceled": false,
             "dayNum": 4,
             "Start": 1,
             "Time": 8,
             "Single": false
+        },
+        {
+            "ar": "الرياضيات لهندسة البرمجيات",
+            "Day": "thu",
+            "location": "ح104",
+            "isCanceled": false,
+            "dayNum": 4,
+            "Start": 3,
+            "Time": 10,
+            "Single": false
         }
     ],
-    "version" : 7
+    "assignments": [],
+    "version": 13
 }
