@@ -209,7 +209,7 @@
         {
             "ar": "تصميم وإنشاء 2 عملي",
             "Day": "tue",
-            "location": "???",
+            "location": "مع ح 104",
             "isCanceled": false,
             "dayNum": 2,
             "Start": 5,
@@ -239,7 +239,7 @@
         {
             "ar": "هندسة تطبيقات الجوال نظري",
             "Day": "tue",
-            "location": "???",
+            "location": "ح102",
             "isCanceled": false,
             "dayNum": 2,
             "Start": 7,
@@ -278,5 +278,5 @@
         }
     ],
     "assignments": [],
-    "version": 13
+    "version": 14
 }
