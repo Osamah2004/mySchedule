@@ -88,10 +88,10 @@
             },
             "theoreticalLectures": [
                 {
-                    "topic": "-",
+                    "topic": "Intro - Mobile overview",
                     "summary": "#",
-                    "date": "1/1/2000",
-                    "attendanceTime": "-",
+                    "date": "20/8/2024",
+                    "attendanceTime": "17:23",
                     "quiz": "#"
                 }
             ],
@@ -276,6 +276,12 @@
             "Single": false
         }
     ],
-    "assignments": [],
-    "version": 14
+    "assignments": [
+{
+    "subject" : "هندسة جوال",
+    "content" : "<a href='https://youtu.be/P6dr8C9bnR8'> تثبيت فلاتر </a> و تقديم افكار المشروع",
+    "date" : 22/8/2024,
+    "mark" : 0
+}],
+    "version": 15
 }
