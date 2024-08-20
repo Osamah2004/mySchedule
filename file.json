@@ -144,16 +144,15 @@
             "name": "الرياضيات لهندسة البرمجيات",
             "hasPractical": false,
             "theoreticalPart": {
-                "name": "تركي محمد العنزي",
-                "email": "tmanzi",
-                "qeemId": "3dzph"
+                "name": "أحمد عبدالفتاح مرجان",
+                "email": "aamorgan",
+                "qeemId": "gtcxr"
             },
             "practicalPart": "#",
             "syllabus": {
-                "نهائي": 0,
-                "ميد": 0,
-                "كويز": 0,
-                "عملي": 0
+                "نهائي" : 40,
+                "تكاليف ومشروع" : 40,
+                "نصفي" : 20
             },
             "theoreticalLectures": [
                 {
