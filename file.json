@@ -48,17 +48,18 @@
             },
             "practicalPart": "#",
             "syllabus": {
-                "نهائي": 0,
-                "ميد": 0,
-                "كويز": 0,
-                "عملي": 0
+                "نهائي": 40,
+                "ميد": 20,
+                "كويز": 15,
+                "الحضور في العملي": 10,
+                "مشروع العملي" : 15
             },
             "theoreticalLectures": [
                 {
-                    "topic": "-",
+                    "topic": "Software testing",
                     "summary": "#",
-                    "date": "20/8/2024",
-                    "attendanceTime": "-",
+                    "date": "21/8/2024",
+                    "attendanceTime": "11:38",
                     "quiz": "#"
                 }
             ],
@@ -282,6 +283,14 @@
     "content" : "<a href='https://youtu.be/P6dr8C9bnR8'> تثبيت فلاتر </a> و تقديم افكار المشروع",
     "date" : "محاضرة العملي القادمة",
     "mark" : 0
-}],
-    "version": 16
+},
+{
+    "subject" : "اختبار البرمجيات",
+    "content" : "تثبيت برنامج Eclipse على الكمبيوتر",
+    "date" : "محاضرة العملي القادمة",
+    "mark" : 0
+}
+
+],
+    "version": 17
 }
