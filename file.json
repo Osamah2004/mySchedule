@@ -157,10 +157,10 @@
             },
             "theoreticalLectures": [
                 {
-                    "topic": "-",
+                    "topic": "Introduction",
                     "summary": "#",
-                    "date": "1/1/2000",
-                    "attendanceTime": "-",
+                    "date": "22/8/2024",
+                    "attendanceTime": "11:23",
                     "quiz": "#"
                 }
             ],
@@ -292,5 +292,5 @@
 }
 
 ],
-    "version": 19
+    "version": 20
 }
