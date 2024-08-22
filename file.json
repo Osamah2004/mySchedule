@@ -98,10 +98,10 @@
             ],
             "practicalLectures": [
                 {
-                    "topic": "-",
+                    "topic": "Flutter installation",
                     "summary": "#",
-                    "date": "1/1/2000",
-                    "attendanceTime": "-",
+                    "date": "22/8/2024",
+                    "attendanceTime": "8:40",
                     "quiz": "#"
                 }
             ]
@@ -260,7 +260,7 @@
             "ar": "هندسة تطبيقات الجوال عملي",
             "Day": "thu",
             "location": "مع ح5",
-            "isCanceled": false,
+            "isCanceled": true,
             "dayNum": 4,
             "Start": 1,
             "Time": 8,
@@ -292,5 +292,5 @@
 }
 
 ],
-    "version": 17
+    "version": 18
 }
