@@ -286,11 +286,11 @@
 },
 {
     "subject" : "اختبار البرمجيات",
-    "content" : "حل <a href='https://drive.google.com/file/d/1tIHQstbZFXSbpavqMtvg2XGRqW5t2d6l/view?usp=drivesdk'>Lab1</a> وإرسال تقرير يحتويعلى الأقل test case واحدة الى <a href='https://uq.sa/cVDmjp'>هذا الرابط</a>",
+    "content" : "حل <a href='https://drive.google.com/file/d/1tIHQstbZFXSbpavqMtvg2XGRqW5t2d6l/view?usp=drivesdk'>Lab1</a> وإرسال تقرير يحتوي على الأقل test case واحدة الى <a href='https://uq.sa/cVDmjp'>هذا الرابط</a>",
     "date" : "الثلاثاء القادم الساعة ١١ مساءًا",
     "mark" : 0
 }
 
 ],
-    "version": 21
+    "version": 22
 }
