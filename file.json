@@ -26,6 +26,13 @@
                     "date": "18/8/2024",
                     "attendanceTime": "9:06",
                     "quiz": "#"
+                },
+                {
+                    "topic": "Responsibility, Ethics, Effective teamwork",
+                    "summary": "#",
+                    "date": "25/8/2024",
+                    "attendanceTime": "10:26",
+                    "quiz": "#"
                 }
             ],
             "practicalLectures": [
@@ -89,7 +96,7 @@
             },
             "theoreticalLectures": [
                 {
-                    "topic": "Intro - Mobile overview",
+                    "topic": "Intro + Mobile overview",
                     "summary": "#",
                     "date": "20/8/2024",
                     "attendanceTime": "17:23",
@@ -144,9 +151,9 @@
             "name": "الرياضيات لهندسة البرمجيات",
             "hasPractical": false,
             "theoreticalPart": {
-                "name": "أحمد عبدالفتاح مرجان",
-                "email": "aamorgan",
-                "qeemId": "gtcxr"
+                "name": "محمد  عبدالقادر التونسي",
+                "email": "mmtounsi",
+                "qeemId": "kn62k"
             },
             "practicalPart": "#",
             "syllabus": {
@@ -286,11 +293,11 @@
 },
 {
     "subject" : "اختبار البرمجيات",
-    "content" : "حل <a href='https://drive.google.com/file/d/1tIHQstbZFXSbpavqMtvg2XGRqW5t2d6l/view?usp=drivesdk'>Lab1</a> وإرسال تقرير يحتوي على الأقل test case واحدة الى <a href='https://uq.sa/cVDmjp'>هذا الرابط</a>",
-    "date" : "الثلاثاء القادم الساعة ١١ مساءًا",
+    "content" : "حل <a href='https://drive.google.com/file/d/1tIHQstbZFXSbpavqMtvg2XGRqW5t2d6l/view?usp=drivesdk'>Lab1</a> وإرسال تقرير يحتويعلى الأقل test case واحدة الى <a href='https://uq.sa/cVDmjp'>هذا الرابط</a>",
+    "date" : "الثلاثاء القادم الساعة ١١ مساءا",
     "mark" : 0
 }
 
 ],
-    "version": 23
+    "version": 24
 }
