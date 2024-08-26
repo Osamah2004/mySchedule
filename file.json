@@ -96,7 +96,7 @@
             },
             "theoreticalLectures": [
                 {
-                    "topic": "Intro + Mobile overview",
+                    "topic": "Intro - Mobile overview",
                     "summary": "#",
                     "date": "20/8/2024",
                     "attendanceTime": "17:23",
@@ -168,6 +168,13 @@
                     "summary": "#",
                     "date": "22/8/2024",
                     "attendanceTime": "11:23",
+                    "quiz": "#"
+                },
+                {
+                    "topic": "Lambda function",
+                    "summary": "#",
+                    "date": "26/8/2024",
+                    "attendanceTime": "1:58",
                     "quiz": "#"
                 }
             ],
@@ -299,5 +306,5 @@
 }
 
 ],
-    "version": 24
+    "version": 25
 }
