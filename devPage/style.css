@@ -1,0 +1,17 @@
+th {
+    background: #bacbe6 !important;
+}
+
+hr {
+    border: 1px solid white !important;
+    opacity: 1;
+    /* Add this line to ensure full opacity */
+}
+
+a {
+    color: brown !important;
+}
+
+a:hover {
+    color: #6ea8fe !important;
+}

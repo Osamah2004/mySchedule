@@ -118,7 +118,6 @@ function getPeriod() {
 
 function markCell(){
     let period = getPeriod();
-
     const dayName = getDayName(day);
     while (removedCells.includes(`${dayName}${period}`)){
         period--;
@@ -128,12 +127,13 @@ function markCell(){
         document.getElementById(element).classList.add("bg-danger");
     }
     if (!(day > 4 || period == 0)){
-        console.log(canceledLectures)
-        console.log(`${dayName}${period}`)
         if (canceledLectures.includes(`${dayName}${period}`)) {
             document.getElementById(`${dayName}${period}`).classList.add("bg-warning");
         }
-        else document.getElementById(`${dayName}${period}`).classList.add("bg-success");
+        else {
+            document.getElementById(`${dayName}${period}`).classList.add("bg-success");
+            document.getElementById(`${dayName}${period}`).classList.remove("bg-info");
+        }
     }
 }
 
@@ -162,6 +162,7 @@ function lecture(subject){
     document.getElementById(lecID).classList.add('bg-info');
     document.getElementById(lecID).classList.add('text-white');
 }
+
 
 let version = localStorage.getItem('version');
 if (version == null){
@@ -209,6 +210,7 @@ for (let i = 0; i < parsedJson.schedule.length; i++) {
     }
     lecture(element)
 }
+markCell()
 // Set the date we're counting down to
 // Number of hours to add
 
@@ -258,7 +260,6 @@ var x = setInterval(function () {
 }, 1000);
 
 document.getElementById('nextLec').textContent = "المحاضرة القادمة : " + nextLec;
-document.getElementById('homeworks').textContent = "الواجبات والمشاريع : " + "لا يوجد";
 document.getElementById('lecLocation').textContent = "قاعة المحاضرة القادمة: " + lecLocation;
 
 function snackbar(text) {
@@ -271,20 +272,18 @@ function snackbar(text) {
     setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
 }
 
-markCell()
 
 function goToPage(index) {
     localStorage.setItem('subjects', JSON.stringify(parsedJson.subjects[index]));
     location.href = 'subject.html'
 }
+
 for (let i = 0; i < parsedJson.subjects.length; i++) {
     const element = parsedJson.subjects[i];
     let id = 'subjects';
-    if (i > 2) {
-        id = 'subjects2'
-    }
-    document.getElementById(id).innerHTML += `<h4><button class="btn btn-outline-light" onclick="goToPage(${i})">${element.name}</button></h4>`;
+    document.getElementById(id).innerHTML += `<button class="btn btn-block rounded-pill btn-outline-light" onclick="goToPage(${i})">${element.name}</button>`;
 }
+
 if (parsedJson.assignments.length == 0){
     document.getElementById('homeworksDiv').remove();
 }
@@ -312,4 +311,3 @@ else for (let i = 0; i < parsedJson.assignments.length; i++) {
     let cell4 = row.insertCell();
     cell4.innerHTML = element.mark;
 }
-console.log(parsedJson.assignments);
