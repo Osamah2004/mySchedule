@@ -295,12 +295,6 @@
     ],
     "assignments": [
 {
-    "subject" : "هندسة جوال",
-    "content" : "<a href='https://youtu.be/P6dr8C9bnR8'> تثبيت فلاتر </a> و تقديم افكار المشروع",
-    "date" : "محاضرة العملي القادمة",
-    "mark" : 0
-},
-{
     "subject" : "اختبار البرمجيات",
     "content" : "حل <a href='https://drive.google.com/file/d/1tIHQstbZFXSbpavqMtvg2XGRqW5t2d6l/view?usp=drivesdk'>Lab1</a> وإرسال تقرير يحتويعلى الأقل test case واحدة الى <a href='https://uq.sa/cVDmjp'>هذا الرابط</a>",
     "date" : "الثلاثاء القادم الساعة ١١ مساءا",
@@ -308,5 +302,5 @@
 }
 
 ],
-    "version": 28
+    "version": 29
 }
