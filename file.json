@@ -123,17 +123,18 @@
             },
             "practicalPart": "#",
             "syllabus": {
-                "نهائي": 0,
-                "ميد": 0,
-                "كويز": 0,
-                "عملي": 0
+                "نهائي": 50,
+                "ميد": 20,
+                "واجبات": 20,
+                "مشروع فردي": 5,
+                "مشروع جماعي": 5
             },
             "theoreticalLectures": [
                 {
                     "topic": "-",
                     "summary": "#",
-                    "date": "1/1/2000",
-                    "attendanceTime": "-",
+                    "date": "26/8/2024",
+                    "attendanceTime": "14:06",
                     "quiz": "#"
                 }
             ],
@@ -174,7 +175,7 @@
                     "topic": "Lambda function",
                     "summary": "#",
                     "date": "26/8/2024",
-                    "attendanceTime": "1:58",
+                    "attendanceTime": "13:58",
                     "quiz": "#"
                 }
             ],
@@ -306,5 +307,5 @@
 }
 
 ],
-    "version": 25
+    "version": 27
 }
