@@ -37,10 +37,10 @@
             ],
             "practicalLectures": [
                 {
-                    "topic": "-",
+                    "topic": "Lab1 - Boeing 737 max crash",
                     "summary": "#",
-                    "date": "22/8/2024",
-                    "attendanceTime": "-",
+                    "date": "27/8/2024",
+                    "attendanceTime": "14:34",
                     "quiz": "#"
                 }
             ]
@@ -132,7 +132,7 @@
             },
             "theoreticalLectures": [
                 {
-                    "topic": "-",
+                    "topic": "Intro",
                     "summary": "#",
                     "date": "26/8/2024",
                     "attendanceTime": "14:06",
@@ -299,8 +299,14 @@
     "content" : "حل <a href='https://drive.google.com/file/d/1tIHQstbZFXSbpavqMtvg2XGRqW5t2d6l/view?usp=drivesdk'>Lab1</a> وإرسال تقرير يحتويعلى الأقل test case واحدة الى <a href='https://uq.sa/cVDmjp'>هذا الرابط</a>",
     "date" : "الثلاثاء القادم الساعة ١١ مساءا",
     "mark" : 0
+},
+{
+    "subject" : "تصميم وإنشاء",
+    "content" : "تقديم تقرير عن آلة الTherac-25 يكون على الأقل صفحة واحدة",
+    "date" : "الإثنين القادم",
+    "mark" : 0
 }
 
 ],
-    "version": 30
+    "version": 31
 }
