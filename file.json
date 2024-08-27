@@ -101,6 +101,13 @@
                     "date": "20/8/2024",
                     "attendanceTime": "17:23",
                     "quiz": "#"
+                },
+                {
+                    "topic": "Mobile application frameworks",
+                    "summary": "#",
+                    "date": "27/8/2024",
+                    "attendanceTime": "17:01",
+                    "quiz": "#"
                 }
             ],
             "practicalLectures": [
@@ -305,8 +312,14 @@
     "content" : "تقديم تقرير عن آلة الTherac-25 يكون على الأقل صفحة واحدة",
     "date" : "الإثنين القادم",
     "mark" : 0
+},
+{
+    "subject" : "هندسة جوال",
+    "content" : "التأكد من عمل Flutter وتقديم معلومات عن المشروع",
+    "date" : "الإثنين القادم",
+    "mark" : 0
 }
 
 ],
-    "version": 31
+    "version": 32
 }
