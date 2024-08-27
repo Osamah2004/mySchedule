@@ -61,7 +61,54 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="homeworkModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">إضافة واجب</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
 
+                    <!-- Modal body -->
+                    <form class="was-validated" id="lectureForm">
+                        <div class="modal-body">
+                            <div class="mb-3 mt-3">
+                                <label class="form-label" for="homeworkSubject">المقرر: </label>
+                                <input type="text" class="form-control" id="homeworkSubject"
+                                    placeholder="ضع المقرر او الدكتور الذي كلفكم بهذا الواجب." name="homeworkSubject" required>
+                                <div class="invalid-feedback">الرجاء ملء الفراغ</div>
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <label class="form-label" for="homeworkContent">المطلوب: </label>
+                                <input type="text" class="form-control" id="homeworkContent" placeholder="ما المطلوب منك في هذا الواجب؟"
+                                    name="homeworkContent" required>
+                                <div class="invalid-feedback">الرجاء ملء الفراغ</div>
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <label class="form-label" for="homeworkDuration">وقت التسليم: </label>
+                                <input type="text" class="form-control" id="homeworkDuration"
+                                    placeholder="آخر وقت لتسليم الواجب" name="homeworkDuration" required>
+                                <div class="invalid-feedback">الرجاء ملء الفراغ</div>
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <label class="form-label" for="homeworkMark">الدرجة: </label>
+                                <input type="text" class="form-control" id="homeworkMark" placeholder="ضع صفر او علامة استفهام اذا لم يحدد كم درجة عليه"
+                                    name="homeworkMark" required>
+                                <div class="invalid-feedback">الرجاء ملء الفراغ</div>
+                            </div>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">إغلاق المربع</button>
+                            <button id="submitButton" disabled data-bs-dismiss="modal"
+                                class="btn btn-primary">إضافة الواجب</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         <div id="homeworksDiv">
             <div class="table-responsive-sm">
                 <table class="table table-info table-bordered" id="homeworksTable">
@@ -72,7 +119,8 @@
                         <th>درجة الواجب/مشروع</th>
                     </tr>
                     <tr>
-                        <td colspan="4"><button class="btn btn-outline-primary"></button></td>
+                        <td colspan="4"><button type="button" data-bs-toggle="modal" data-bs-target="#homeworkModal"
+                            class="btn btn-outline-primary">إضافة واجب</button></td>
                     </tr>
                 </table>
             </div>
