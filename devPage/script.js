@@ -62,12 +62,27 @@ function setCell(){
 document.getElementById('lectureForm').addEventListener('submit', function (event) {
     event.preventDefault();
 });
+document.getElementById('homeworkForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+});
+document.getElementById('subjectForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+});
 document.addEventListener('input', function () {
-    const form = document.getElementById('lectureForm');
-    const submitButton = document.getElementById('submitButton');
-    submitButton.disabled = !form.checkValidity();
+    document.getElementById('lecModalButton').disabled = !document.getElementById('lectureForm').checkValidity();
+    document.getElementById('homeworkModalButton').disabled = !document.getElementById('homeworkForm').checkValidity();
+    document.getElementById('subjectModalButton').disabled = !document.getElementById('subjectForm').checkValidity();
 });
 
+function pracModal(bool){
+    debugger;
+    let inputs = document.querySelectorAll('.prac');
+    for (let i = 0; i < inputs.length; i++) {
+        const input = inputs[i];
+        input.required = bool;
+    }
+    document.getElementById('pracModal').hidden = !bool;
+}
 
 const tdElements = document.querySelectorAll('td');
 tdElements.forEach((td) => {

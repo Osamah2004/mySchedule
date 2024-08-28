@@ -11,7 +11,12 @@ hr {
 a {
     color: brown !important;
 }
-
+#qeeem {
+    color: aqua !important;
+}
 a:hover {
     color: #6ea8fe !important;
+}
+#qeeem:hover {
+    color: #003cff !important;
 }
