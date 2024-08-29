@@ -193,6 +193,13 @@
                     "date": "26/8/2024",
                     "attendanceTime": "13:58",
                     "quiz": "#"
+                },
+                {
+                    "topic": "Lambda function 2",
+                    "summary": "#",
+                    "date": "29/8/2024",
+                    "attendanceTime": "11:37",
+                    "quiz": "#"
                 }
             ],
             "practicalLectures": [
@@ -318,10 +325,10 @@
 {
     "subject" : "هندسة جوال",
     "content" : "التأكد من عمل Flutter وتسليم ملف به معلومات عن المشروع على البلاكبورد",
-    "date" : "يوم السبت القادم",
+    "date" : "بوم السبت القادم",
     "mark" : 0
 }
 
 ],
-    "version": 34
+    "version": 35
 }
