@@ -295,10 +295,10 @@
             "Single": false
         },
         {
-            "ar": "هندسة تطبيقات الجوال عملي (ملغية)",
+            "ar": "هندسة تطبيقات الجوال عملي",
             "Day": "thu",
             "location": "مع ح5",
-            "isCanceled": true,
+            "isCanceled": false,
             "dayNum": 4,
             "Start": 1,
             "Time": 8,
@@ -330,5 +330,5 @@
 }
 
 ],
-    "version": 35
+    "version": 36
 }
