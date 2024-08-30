@@ -16,9 +16,9 @@
     <div class="container text-center mt-3">
 
         <h1 class="text-bg-primary rounded-pill">إضافة المقررات</h1>
-        <div id="subjects" class="btn-group d-grid">
-                <button type="button" data-bs-toggle="modal" data-bs-target="#subjectsModal"
-                    class="btn btn-block rounded-pill btn-outline-light">إضافة مقرر</button>
+        <div id="devSubjects" class="btn-group d-grid">
+            <button id="addSubject" type="button" data-bs-toggle="modal" data-bs-target="#subjectsModal"
+                class="btn btn-block rounded-pill btn-outline-light">إضافة مقرر</button>
         </div>
 
         
@@ -37,37 +37,37 @@
                         <div class="modal-body">
                             <div class="mb-3 mt-3">
                                 <label class="form-label" for="subjectName">الإسم: </label>
-                                <input type="text" class="form-control" id="subjectName"
+                                <input type="text" class="form-control subject" id="subjectName"
                                     placeholder="إسم المقرر" name="subjectName" required>
                                 <div class="invalid-feedback">الرجاء ملء الفراغ</div>
                             </div>
                         </div>
                         <div class="form-check modal-body mb-3">
                             <label class="form-check-label" for="hasPractical">
-                                <input onclick="pracModal(hasPractical.checked)" class="form-check-input" type="checkbox" id="hasPractical" name="hasPractical" checked> 
+                                <input onclick="pracModal(hasPractical.checked)" class="form-check-input subject" type="checkbox" id="hasPractical" name="hasPractical" checked> 
                                 هل المقرر يحتوي على نشاط عملي؟
                             </label>
                         </div>
                         <div class="modal-body">
                             <div class="mb-3 mt-3">
                                 <label class="form-label" for="theoDocName">إسم دكتور النظري: </label>
-                                <input type="text" class="form-control" id="theoDocName" placeholder="إسم الدكتور" name="theoDocName" required>
+                                <input type="text" class="form-control subject" id="theoDocName" placeholder="إسم الدكتور" name="theoDocName" required>
                                 <div class="invalid-feedback">الرجاء ملء الفراغ</div>
                             </div>
                             <div class="mb-3 mt-3">
                                 <label class="form-label" for="theoDocName">إيميل دكتور النظري: </label>
-                                <input type="text" class="form-control" id="theoDocName" placeholder="ضع الجزء ما قبل علامة@" name="theoDocName" required>
+                                <input type="text" class="form-control subject" id="theoDocName" placeholder="ضع الجزء ما قبل علامة@" name="theoDocName" required>
                                 <div class="invalid-feedback">الرجاء ملء الفراغ</div>
                             </div>
                             <div class="mb-3 mt-3">
                                 <label class="form-label" for="theoDocName"><a href="https://qeeem.com/uqu" id="qeeem">تقييم الدكتور:</a> </label>
-                                <input type="text" class="form-control" id="theoDocName" placeholder="ضع رابط تقييم الدكتور في موقع قيم" name="theoDocName"
+                                <input type="text" class="form-control subject" id="theoDocName" placeholder="ضع رابط تقييم الدكتور في موقع قيم" name="theoDocName"
                                     required>
                                 <div class="invalid-feedback">الرجاء ملء الفراغ</div>
                             </div>
                             <div class="form-check modal-body mb-3">
                                 <label class="form-check-label" for="sameDoc">
-                                    <input onclick="pracModal(sameDoc.checked)" class="form-check-input" type="checkbox" id="sameDoc" name="sameDoc" checked> 
+                                    <input onclick="pracModal(!sameDoc.checked)" class="form-check-input subject" type="checkbox" id="sameDoc" name="sameDoc"> 
                                     هل النشاطان يدرسان من نفس الدكتور؟
                                 </label>
                             </div>
@@ -76,19 +76,19 @@
                             <hr>
                             <div class="mb-3 mt-3">
                                 <label class="form-label" for="pracDocName">إسم دكتور العملي: </label>
-                                <input type="text" class="form-control prac" id="pracDocName" placeholder="إسم الدكتور" name="pracDocName" required>
+                                <input type="text" class="form-control prac subject" id="pracDocName" placeholder="إسم الدكتور" name="pracDocName" required>
                                 <div class="invalid-feedback">الرجاء ملء الفراغ</div>
                             </div>
                             <div class="mb-3 mt-3">
                                 <label class="form-label" for="pracDocName">إيميل دكتور العملي: </label>
-                                <input type="text" class="form-control prac" id="pracDocName" placeholder="ضع الجزء ما قبل علامة@" name="pracDocName"
+                                <input type="text" class="form-control prac subject" id="pracDocName" placeholder="ضع الجزء ما قبل علامة@" name="pracDocName"
                                     required>
                                 <div class="invalid-feedback">الرجاء ملء الفراغ</div>
                             </div>
                             <div class="mb-3 mt-3">
                                 <label class="form-label" for="pracDocName"><a href="https://qeeem.com/uqu" id="qeeem">تقييم الدكتور:</a>
                                 </label>
-                                <input type="text" class="form-control prac" id="pracDocName" placeholder="ضع رابط تقييم الدكتور في موقع قيم"
+                                <input type="text" class="form-control prac subject" id="pracDocName" placeholder="ضع رابط تقييم الدكتور في موقع قيم"
                                     name="pracDocName" required>
                                 <div class="invalid-feedback">الرجاء ملء الفراغ</div>
                             </div>
@@ -97,7 +97,7 @@
                         <!-- Modal footer -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">إغلاق المربع</button>
-                            <button id="subjectModalButton" disabled  data-bs-dismiss="modal" class="btn btn-primary">إضافة
+                            <button onclick="addSubject()" id="subjectModalButton" disabled  data-bs-dismiss="modal" class="btn btn-primary">إضافة
                                 المقرر</button>
                         </div>
                     </form>
@@ -201,7 +201,7 @@
                         <!-- Modal footer -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">إغلاق المربع</button>
-                            <button id="homeworkModalButton" disabled data-bs-dismiss="modal"
+                            <button onclick="addHomework(homeworkSubject.value,homeworkContent.value,homeworkDuration.value,homeworkMark.value)" id="homeworkModalButton" disabled data-bs-dismiss="modal"
                                 class="btn btn-primary">إضافة الواجب</button>
                         </div>
                     </form>
@@ -222,7 +222,7 @@
                         <th>تاريخ التسليم</th>
                         <th>درجة الواجب/مشروع</th>
                     </tr>
-                    <tr>
+                    <tr id="addHomework">
                         <td colspan="4"><button style="width: 100%;" type="button" data-bs-toggle="modal" data-bs-target="#homeworkModal"
                             class="btn rounded-pill btn-outline-primary">إضافة واجب</button></td>
                     </tr>

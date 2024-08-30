@@ -3,7 +3,6 @@ object.subjects = [];
 object.schedule = [];
 object.assignments = [];
 object.version = 0;
-console.log(object)
 let tdId = "id";
 function setId(id){
     tdId = id;
@@ -28,7 +27,6 @@ function getTime(id){
     return arr[id]
 }
 function setCell(){
-    debugger;
     if (dual.checked) {
         tdId.setAttribute('rowspan', 2);
         let next;
@@ -44,7 +42,6 @@ function setCell(){
     start = tdId.id.slice(3, 5)
     tdId.classList.add('bg-info');
     tdId.classList.add('text-white');
-    console.log(document.getElementById('lecName'))
     tdId.innerHTML = document.getElementById('lecName').value;
     let lecture = {
         ar : document.getElementById('lecName').value,
@@ -57,7 +54,6 @@ function setCell(){
         single : document.getElementById('single').checked
     }
     object.schedule.push(lecture);
-    console.log(object.schedule)
 };
 document.getElementById('lectureForm').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -74,8 +70,55 @@ document.addEventListener('input', function () {
     document.getElementById('subjectModalButton').disabled = !document.getElementById('subjectForm').checkValidity();
 });
 
-function pracModal(bool){
+function addHomework(subject,content,duration,mark){
     debugger;
+    let table = document.getElementById('homeworksTable');
+    let row = table.insertRow(1);
+    let cell1 = row.insertCell(0);
+    cell1.innerHTML = subject;
+    let cell2 = row.insertCell(1);
+    cell2.innerHTML = content;
+    let cell3 = row.insertCell(2);
+    cell3.innerHTML = duration;
+    let cell4 = row.insertCell(3);
+    if (mark == ""){
+        mark = 0;
+    }
+    cell4.innerHTML = mark;
+}
+
+function addSubject() {
+    debugger;
+    let inputs = document.querySelectorAll('.subject');
+    let subject = new Object();
+    subject.name = inputs[0].value;
+    subject.hasPractical = inputs[1].checked;
+    subject.theoreticalPart = new Object();
+    subject.theoreticalPart.name = inputs[2].value;
+    subject.theoreticalPart.email = inputs[3].value;
+    subject.theoreticalPart.qeemId = inputs[4].value;
+    if (inputs[5].checked) {
+        subject.practicalPart = '#';
+    }
+    else {
+        subject.practicalPart = new Object();
+        subject.practicalPart.name = inputs[6].value;
+        subject.practicalPart.email = inputs[7].value;
+        subject.practicalPart.qeemId = inputs[8].value;
+    }
+    object.subjects.push(subject);
+    let newButton = document.createElement('button');
+    newButton.className = 'btn btn-block rounded-pill btn-outline-light';
+    newButton.innerHTML = inputs[0].value;
+    newButton.onclick = function () {
+        location.href = 'subject.html';
+    };
+    let div = document.getElementById('devSubjects');
+    div.insertBefore(newButton, div.children[0]);
+    localStorage.setItem('devSubjects', JSON.stringify(object.subjects[object.subjects.length - 1]));
+}
+
+function pracModal(bool){
     let inputs = document.querySelectorAll('.prac');
     for (let i = 0; i < inputs.length; i++) {
         const input = inputs[i];
