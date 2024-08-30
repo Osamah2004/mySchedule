@@ -1,313 +1,135 @@
-function fetchJSONData() {
-    return new Promise((resolve, reject) => {
-        fetch("file.json")
-            .then((res) => {
-                if (!res.ok) {
-                    throw new Error(`HTTP error! Status: ${res.status}`);
-                }
-                return res.json();
-            })
-            .then((data) => {
-                resolve(data); // Resolve the promise with the fetched data
-            })
-            .catch((error) => {
-                reject(error); // Reject the promise if there's an error
-            });
-    });
+let object = new Object();
+object.subjects = [];
+object.schedule = [];
+object.assignments = [];
+object.version = 0;
+let tdId = "id";
+function setId(id){
+    tdId = id;
 }
-
-function choice(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
+//
+function getDayNumber(dayName) {
+    const days = {
+        'sun': 0,
+        'mon': 1,
+        'tue': 2,
+        'wed': 3,
+        'thu': 4,
+        'fri': 5,
+        'sat': 6
+    };
+    return days[dayName.toLowerCase()];
 }
-let dua = [
-    'سبحان الله وبحمده, سبحان العظيم',
-    'اللهم صل وسلم على سيدنا محمد',
-    'لا تنسى ذكر الله',
-    'لا إله إلا الله',
-    'لا حول ولا قوة إلا بالله',
-    'استغفر الله العلي العظيم من كل ذنب عظيم',
-    'لا اله إلا انت سبحانك اني كنت من الظالمين'
-]
-
-const now = new Date();
-const day = now.getDay();
-const hours = now.getHours();
-
-function getDayName(dayNumber) {
-    const days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-    return days[dayNumber];
+let start;
+//[8,9,10,11,13,14,16,17,18,19,20,21]
+function getTime(id){
+    let arr = [8, 9, 10, 11, 13, 14, 16, 17, 18, 19, 20, 21];
+    return arr[id]
 }
-
-function nextLecture() {
-    const current = `${getDayName(day)}${hours}`;
-    if (lectureTimes.includes(current)){
-        console.log('a lecture at the momemnt')
-    }
-
-}
-function hoursUntilTarget(dayNumber, targetHour) {
-    // Get the current date and time
-    const now = new Date();
-    const currentDay = now.getDay(); // 0 (Sunday) - 6 (Saturday)
-    const currentHour = now.getHours(); // 0 - 23
-
-    // Calculate the difference in days
-    let dayDifference = dayNumber - currentDay;
-    if (dayDifference < 0) {
-        dayDifference += 7; // Wrap around to next week
-    }
-
-    // Calculate the difference in hours
-    let hourDifference = targetHour - currentHour;
-
-    // If the target hour is before the current hour on the same day, move to the next week
-    if (dayDifference === 0 && hourDifference <= 0) {
-        dayDifference = 7;
-    }
-
-    // Total hours left
-    const totalHoursLeft = (dayDifference * 24) + hourDifference;
-
-    return totalHoursLeft;
-}
-
-function getPeriod() {
-    switch (hours) {
-        case 8:
-            period = 1;
-            break;
-        case 9:
-            period = 2;
-            break;
-        case 10:
-            period = 3;
-            break;
-        case 11:
-            period = 4;
-            break;
-        case 13:
-            period = 5;
-            break;
-        case 14:
-            period = 6;
-            break;
-        case 16:
-            period = 7;
-            break;
-        case 17:
-            period = 8;
-            break;
-        case 18:
-            period = 9;
-            break;
-        case 19:
-            period = 10;
-            break;
-        case 20:
-            period = 11;
-            break;
-        case 21:
-            period = 12;
-            break;
-        default:
-            period = 0;
-            break;
-    }
-    return period;
-}
-
-function markCell(){
-    let period = getPeriod();
-    const dayName = getDayName(day);
-    while (removedCells.includes(`${dayName}${period}`)){
-        period--;
-    }
-    for (let i = 0; i < canceledLectures.length; i++) {
-        const element = canceledLectures[i];
-        document.getElementById(element).classList.add("bg-danger");
-    }
-    if (!(day > 4 || period == 0)){
-        if (canceledLectures.includes(`${dayName}${period}`)) {
-            document.getElementById(`${dayName}${period}`).classList.add("bg-warning");
+function setCell(){
+    if (dual.checked) {
+        tdId.setAttribute('rowspan', 2);
+        let next;
+        if (tdId.id.length == 4) {
+            next = Number(tdId.id[3]) + 1;
         }
         else {
-            document.getElementById(`${dayName}${period}`).classList.add("bg-success");
-            document.getElementById(`${dayName}${period}`).classList.remove("bg-info");
+            next = Number(tdId.id.slice(-2)) + 1
         }
-    }
-}
-
-let block2 = document.getElementById('block 2');
-
-let removedCells = []
-let lectureTimes = []
-let canceledLectures = []
-
-function reload(){
-    localStorage.clear();
-    location.reload();
-}
-
-let minHours = 7 * 24;
-
-function lecture(subject){
-    lecID = subject.Day + subject.Start;
-    if (!subject.Single){
-        document.getElementById(lecID).setAttribute('rowspan', 2);
-        const element = document.getElementById(subject.Day + (subject.Start + 1));
-        removedCells.push(subject.Day + (subject.Start + 1));
+        const element = document.getElementById(tdId.id.slice(0, 3) + next);
         element.remove();
     }
-    document.getElementById(lecID).textContent = subject.ar;
-    document.getElementById(lecID).classList.add('bg-info');
-    document.getElementById(lecID).classList.add('text-white');
-}
-
-
-let version = localStorage.getItem('version');
-if (version == null){
-fetchJSONData()
-    .then((object) => {
-        localStorage.setItem('jsonFile', JSON.stringify(object))
-        localStorage.setItem('version', object.version);
-        snackbar('أعد تحميل هذه الصفحة');
-    })
-    .catch((error) => {
-        console.error("Unable to fetch data:", error);
-    });
-}
-else {
-    snackbar(choice(dua));
-}
-fetchJSONData()
-    .then((object) => {
-        if (version != object.version){
-            localStorage.setItem('jsonFile', JSON.stringify(object))
-            localStorage.setItem('version',object.version)
-            snackbar('أعد تحميل الصفحة');
-        }
-    })
-    .catch((error) => {
-        console.error("Unable to fetch data:", error);
-    });
-let parsedJson = JSON.parse(localStorage.getItem('jsonFile'));
-
-let nextLec;
-let lecLocation;
-
-for (let i = 0; i < parsedJson.schedule.length; i++) {
-    const element = parsedJson.schedule[i];
-    let hoursToLecture = hoursUntilTarget(element.dayNum, element.Time);
-    if (element.isCanceled){
-        canceledLectures.push(`${element.Day}${element.Start}`)
-        lecture(element)
-        continue;
+    start = tdId.id.slice(3, 5)
+    tdId.classList.add('bg-info');
+    tdId.classList.add('text-white');
+    tdId.innerHTML = document.getElementById('lecName').value;
+    let lecture = {
+        ar : document.getElementById('lecName').value,
+        day : tdId.id.slice(0,3),
+        location: document.getElementById('lecLocation').value,
+        dayNum: getDayNumber(tdId.id.slice(0, 3)),
+        Start : start,
+        Time : getTime(start - 1),
+        isCanceled : false,
+        single : document.getElementById('single').checked
     }
-    if (hoursToLecture < minHours){
-        minHours = hoursToLecture
-        nextLec = element.ar;
-        lecLocation = element.location;
-    }
-    lecture(element)
-}
-markCell()
-// Set the date we're counting down to
-// Number of hours to add
+    object.schedule.push(lecture);
+};
+document.getElementById('lectureForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+});
+document.getElementById('homeworkForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+});
+document.getElementById('subjectForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+});
+document.addEventListener('input', function () {
+    document.getElementById('lecModalButton').disabled = !document.getElementById('lectureForm').checkValidity();
+    document.getElementById('homeworkModalButton').disabled = !document.getElementById('homeworkForm').checkValidity();
+    document.getElementById('subjectModalButton').disabled = !document.getElementById('subjectForm').checkValidity();
+});
 
-// Get the current date and time
-const currentDate = new Date();
-
-// Calculate the future date by adding hoursToAdd
-const futureDate = new Date(currentDate.getTime() + minHours * 60 * 60 * 1000);
-
-// Format the date string for countdown
-const monthNames = ["January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-];
-
-const month = monthNames[futureDate.getMonth()];
-const day_ = futureDate.getDate();
-const year = futureDate.getFullYear();
-const hours_ = futureDate.getHours();
-
-// Set the countdown target
-const countDownDate = new Date(`${month} ${day_}, ${year} ${hours_}:00:00`).getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function () {
-
-    // Get today's date and time
-    var now = new Date().getTime();
-
-    // Find the distance between now and the count down date
-    var distance = countDownDate - now;
-
-    // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    // Output the result in an element with id="demo"
-    document.getElementById("timeToNextLec").innerHTML = "الوقت المتبقي للمحاضرة القادمة : " + (days + "d " + hours + "h "
-        + minutes + "m " + seconds + "s ");
-
-    // If the count down is over, write some text 
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("timeToNextLec").innerHTML = "EXPIRED";
-    }
-}, 1000);
-
-document.getElementById('nextLec').textContent = "المحاضرة القادمة : " + nextLec;
-document.getElementById('lecLocation').textContent = "قاعة المحاضرة القادمة: " + lecLocation;
-
-function snackbar(text) {
-    var x = document.getElementById("snackbar")
-    x.textContent = text;
-    // Add the "show" class to DIV
-    x.className = "show";
-
-    // After 3 seconds, remove the show class from DIV
-    setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
-}
-
-
-function goToPage(index) {
-    localStorage.setItem('subjects', JSON.stringify(parsedJson.subjects[index]));
-    location.href = 'subject.html'
-}
-
-for (let i = 0; i < parsedJson.subjects.length; i++) {
-    const element = parsedJson.subjects[i];
-    let id = 'subjects';
-    document.getElementById(id).innerHTML += `<button class="btn btn-block rounded-pill btn-outline-light" onclick="goToPage(${i})">${element.name}</button>`;
-}
-
-if (parsedJson.assignments.length == 0){
-    document.getElementById('homeworksDiv').remove();
-}
-/* 
-{
-    "subject" : "واجب تجريبي",
-    "content" : "<a herf="www.youtube.com">واجب حرييييييقة من الفرن</a>",
-    "date" : 18/8/2024,
-    "mark" : 69
-}
- */
-else for (let i = 0; i < parsedJson.assignments.length; i++) {
-    const element = parsedJson.assignments[i];
+function addHomework(subject,content,duration,mark){
+    debugger;
     let table = document.getElementById('homeworksTable');
-    let row = table.insertRow();
-    let cell1 = row.insertCell();
-    cell1.innerHTML = element.subject;
-    
-    let cell2 = row.insertCell();
-    cell2.innerHTML = element.content;
-    
-    let cell3 = row.insertCell();
-    cell3.innerHTML = element.date;
-
-    let cell4 = row.insertCell();
-    cell4.innerHTML = element.mark;
+    let row = table.insertRow(1);
+    let cell1 = row.insertCell(0);
+    cell1.innerHTML = subject;
+    let cell2 = row.insertCell(1);
+    cell2.innerHTML = content;
+    let cell3 = row.insertCell(2);
+    cell3.innerHTML = duration;
+    let cell4 = row.insertCell(3);
+    if (mark == ""){
+        mark = 0;
+    }
+    cell4.innerHTML = mark;
 }
+
+function addSubject() {
+    debugger;
+    let inputs = document.querySelectorAll('.subject');
+    let subject = new Object();
+    subject.name = inputs[0].value;
+    subject.hasPractical = inputs[1].checked;
+    subject.theoreticalPart = new Object();
+    subject.theoreticalPart.name = inputs[2].value;
+    subject.theoreticalPart.email = inputs[3].value;
+    subject.theoreticalPart.qeemId = inputs[4].value;
+    if (inputs[5].checked) {
+        subject.practicalPart = '#';
+    }
+    else {
+        subject.practicalPart = new Object();
+        subject.practicalPart.name = inputs[6].value;
+        subject.practicalPart.email = inputs[7].value;
+        subject.practicalPart.qeemId = inputs[8].value;
+    }
+    object.subjects.push(subject);
+    let newButton = document.createElement('button');
+    newButton.className = 'btn btn-block rounded-pill btn-outline-light';
+    newButton.innerHTML = inputs[0].value;
+    newButton.onclick = function () {
+        location.href = 'subject.html';
+    };
+    let div = document.getElementById('devSubjects');
+    div.insertBefore(newButton, div.children[0]);
+    localStorage.setItem('devSubjects', JSON.stringify(object.subjects[object.subjects.length - 1]));
+}
+
+function pracModal(bool){
+    let inputs = document.querySelectorAll('.prac');
+    for (let i = 0; i < inputs.length; i++) {
+        const input = inputs[i];
+        input.required = bool;
+    }
+    document.getElementById('pracModal').hidden = !bool;
+}
+
+const tdElements = document.querySelectorAll('td');
+tdElements.forEach((td) => {
+    if (td.id.length == 4 || td.id.length == 5){
+        td.innerHTML += '<button onclick="setId(' + td.id +')" type="button" data-bs-toggle="modal" data-bs-target="#scheduleModal" class="btn btn-outline-primary">إضافة محاضرة</button>';
+    }
+});

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark" dir="rtl" lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container text-center mt-3">
+
+        <h1 class="text-bg-primary rounded-pill">إضافة المقررات</h1>
+        <div id="devSubjects" class="btn-group d-grid">
+            <button id="addSubject" type="button" data-bs-toggle="modal" data-bs-target="#subjectsModal"
+                class="btn btn-block rounded-pill btn-outline-light">إضافة مقرر</button>
+        </div>
+
+        
+        <!-- subjects start -->
+         <div class="modal fade text-end" id="subjectsModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">إضافة واجب</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+        
+                    <!-- Modal body -->
+                    <form class="was-validated" id="subjectForm">
+                        <div class="modal-body">
+                            <div class="mb-3 mt-3">
+                                <label class="form-label" for="subjectName">الإسم: </label>
+                                <input type="text" class="form-control subject" id="subjectName"
+                                    placeholder="إسم المقرر" name="subjectName" required>
+                                <div class="invalid-feedback">الرجاء ملء الفراغ</div>
+                            </div>
+                        </div>
+                        <div class="form-check modal-body mb-3">
+                            <label class="form-check-label" for="hasPractical">
+                                <input onclick="pracModal(hasPractical.checked)" class="form-check-input subject" type="checkbox" id="hasPractical" name="hasPractical" checked> 
+                                هل المقرر يحتوي على نشاط عملي؟
+                            </label>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3 mt-3">
+                                <label class="form-label" for="theoDocName">إسم دكتور النظري: </label>
+                                <input type="text" class="form-control subject" id="theoDocName" placeholder="إسم الدكتور" name="theoDocName" required>
+                                <div class="invalid-feedback">الرجاء ملء الفراغ</div>
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <label class="form-label" for="theoDocName">إيميل دكتور النظري: </label>
+                                <input type="text" class="form-control subject" id="theoDocName" placeholder="ضع الجزء ما قبل علامة@" name="theoDocName" required>
+                                <div class="invalid-feedback">الرجاء ملء الفراغ</div>
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <label class="form-label" for="theoDocName"><a href="https://qeeem.com/uqu" id="qeeem">تقييم الدكتور:</a> </label>
+                                <input type="text" class="form-control subject" id="theoDocName" placeholder="ضع رابط تقييم الدكتور في موقع قيم" name="theoDocName"
+                                    required>
+                                <div class="invalid-feedback">الرجاء ملء الفراغ</div>
+                            </div>
+                            <div class="form-check modal-body mb-3">
+                                <label class="form-check-label" for="sameDoc">
+                                    <input onclick="pracModal(!sameDoc.checked)" class="form-check-input subject" type="checkbox" id="sameDoc" name="sameDoc"> 
+                                    هل النشاطان يدرسان من نفس الدكتور؟
+                                </label>
+                            </div>
+                        </div>
+                        <div class="modal-body" id="pracModal">
+                            <hr>
+                            <div class="mb-3 mt-3">
+                                <label class="form-label" for="pracDocName">إسم دكتور العملي: </label>
+                                <input type="text" class="form-control prac subject" id="pracDocName" placeholder="إسم الدكتور" name="pracDocName" required>
+                                <div class="invalid-feedback">الرجاء ملء الفراغ</div>
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <label class="form-label" for="pracDocName">إيميل دكتور العملي: </label>
+                                <input type="text" class="form-control prac subject" id="pracDocName" placeholder="ضع الجزء ما قبل علامة@" name="pracDocName"
+                                    required>
+                                <div class="invalid-feedback">الرجاء ملء الفراغ</div>
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <label class="form-label" for="pracDocName"><a href="https://qeeem.com/uqu" id="qeeem">تقييم الدكتور:</a>
+                                </label>
+                                <input type="text" class="form-control prac subject" id="pracDocName" placeholder="ضع رابط تقييم الدكتور في موقع قيم"
+                                    name="pracDocName" required>
+                                <div class="invalid-feedback">الرجاء ملء الفراغ</div>
+                            </div>
+                        </div>
+        
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">إغلاق المربع</button>
+                            <button onclick="addSubject()" id="subjectModalButton" disabled  data-bs-dismiss="modal" class="btn btn-primary">إضافة
+                                المقرر</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- subjects end-->
+
+ 
+
+        <!-- schedule start-->
+        <div class="modal fade text-end" id="scheduleModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">إضافة محاضرة</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <form class="was-validated" id="lectureForm">
+                        <div class="modal-body">
+                            <div class="mb-3 mt-3">
+                                <label class="form-label" for="lecName">الإسم:</label>
+                                <input type="text" class="form-control" id="lecName"
+                                    placeholder="أدخل إسم المقرر (او اي شيء مهم زي كويز او عرض مشروع)" name="lecName" required>
+                                <div class="invalid-feedback">الرجاء ملء الفراغ</div>
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <label class="form-label" for="lecLocation">القاعة:</label>
+                                <input type="text" class="form-control" id="lecLocation" placeholder="أدخل قاعة المحاضرة"
+                                    name="lecLocation" required>
+                                <div class="invalid-feedback">الرجاء ملء الفراغ</div>
+                            </div>
+
+                            <label>مدة المحاضرة</label>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="single" name="optradio" value="single">
+                                <label class="form-check-label" for="single">فردية</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="dual" name="optradio" value="dual" checked>
+                                <label class="form-check-label" for="dual">زوجية</label>
+                            </div>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">إغلاق المربع</button>
+                            <button disabled id="lecModalButton" onclick="setCell()"  data-bs-dismiss="modal" class="btn btn-primary">إضافة المقرر إلى الجدول</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- schedule end-->
+
+ 
+ 
+
+        <!-- homework start-->
+        <div class="modal fade text-end" id="homeworkModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">إضافة واجب</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <form class="was-validated" id="homeworkForm">
+                        <div class="modal-body">
+                            <div class="mb-3 mt-3">
+                                <label class="form-label" for="homeworkSubject">المقرر: </label>
+                                <input type="text" class="form-control" id="homeworkSubject"
+                                    placeholder="ضع المقرر او الدكتور الذي كلفكم بهذا الواجب." name="homeworkSubject" required>
+                                <div class="invalid-feedback">الرجاء ملء الفراغ</div>
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <label class="form-label" for="homeworkContent">المطلوب: </label>
+                                <input type="text" class="form-control" id="homeworkContent" placeholder="ما المطلوب منك في هذا الواجب؟"
+                                    name="homeworkContent" required>
+                                <div class="invalid-feedback">الرجاء ملء الفراغ</div>
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <label class="form-label" for="homeworkDuration">وقت التسليم: </label>
+                                <input type="text" class="form-control" id="homeworkDuration"
+                                    placeholder="آخر وقت لتسليم الواجب" name="homeworkDuration" required>
+                                <div class="invalid-feedback">الرجاء ملء الفراغ</div>
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <label class="form-label" for="homeworkMark">الدرجة: </label>
+                                <input type="text" class="form-control" id="homeworkMark" placeholder="سيوضع صفر إن ترك فارغا"
+                                    name="homeworkMark">
+                                <div class="invalid-feedback">الرجاء ملء الفراغ</div>
+                            </div>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">إغلاق المربع</button>
+                            <button onclick="addHomework(homeworkSubject.value,homeworkContent.value,homeworkDuration.value,homeworkMark.value)" id="homeworkModalButton" disabled data-bs-dismiss="modal"
+                                class="btn btn-primary">إضافة الواجب</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- homework end-->
+
+
+        <hr>
+        <h1 class="text-bg-primary rounded-pill">إضافة التكليفات</h1>
+        <div id="homeworksDiv">
+            <div class="table-responsive-sm">
+                <table class="table table-info table-bordered" id="homeworksTable">
+                    <tr>
+                        <th>المقرر</th>
+                        <th>محتوى الواجب/مشروع</th>
+                        <th>تاريخ التسليم</th>
+                        <th>درجة الواجب/مشروع</th>
+                    </tr>
+                    <tr id="addHomework">
+                        <td colspan="4"><button style="width: 100%;" type="button" data-bs-toggle="modal" data-bs-target="#homeworkModal"
+                            class="btn rounded-pill btn-outline-primary">إضافة واجب</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <hr>
+        <h1 class="text-bg-primary rounded-pill">تعديل الجدول</h1>
+        <div class="table-responsive-sm">
+            <table class="table table-info table-bordered" id="block 1">
+                <thead class="table-primary">
+                    <tr>
+                        <th>بلوك 2</th>
+                        <th>الأحد</th>
+                        <th>الإثنين</th>
+                        <th>الثلاثاء</th>
+                        <th>الأربعاء</th>
+                        <th>الخميس</th>
+                    </tr>
+                </thead>
+
+                <tr>
+                    <th>8:00 - 8:50</th>
+                    <td id="sun1"></td>
+                    <td id="mon1"></td>
+                    <td id="tue1"></td>
+                    <td id="wed1"></td>
+                    <td id="thu1"></td>
+                </tr>
+                <tr>
+                    <th>9:00 - 9:50</th>
+                    <td id="sun2"></td>
+                    <td id="mon2"></td>
+                    <td id="tue2"></td>
+                    <td id="wed2"></td>
+                    <td id="thu2"></td>
+                </tr>
+                <tr>
+                    <th>10:00 - 10:50</th>
+                    <td id="sun3"></td>
+                    <td id="mon3"></td>
+                    <td id="tue3"></td>
+                    <td id="wed3"></td>
+                    <td id="thu3"></td>
+                </tr>
+                <tr>
+                    <th>11:00 - 11:50</th>
+                    <td id="sun4"></td>
+                    <td id="mon4"></td>
+                    <td id="tue4"></td>
+                    <td id="wed4"></td>
+                    <td id="thu4"></td>
+                </tr>
+                <tr>
+                    <th>13:00 - 13:50</th>
+                    <td id="sun5"></td>
+                    <td id="mon5"></td>
+                    <td id="tue5"></td>
+                    <td id="wed5"></td>
+                    <td id="thu5"></td>
+                </tr>
+                <tr>
+                    <th>14:00 - 14:50</th>
+                    <td id="sun6"></td>
+                    <td id="mon6"></td>
+                    <td id="tue6"></td>
+                    <td id="wed6"></td>
+                    <td id="thu6"></td>
+                </tr>
+                <tr>
+                    <th>16:00 - 16:50</th>
+                    <td id="sun7"></td>
+                    <td id="mon7"></td>
+                    <td id="tue7"></td>
+                    <td id="wed7"></td>
+                    <td id="thu7"></td>
+                </tr>
+                <tr>
+                    <th>17:00 - 17:50</th>
+                    <td id="sun8"></td>
+                    <td id="mon8"></td>
+                    <td id="tue8"></td>
+                    <td id="wed8"></td>
+                    <td id="thu8"></td>
+                </tr>
+                <tr>
+                    <th>18:00 - 18:50</th>
+                    <td id="sun9"></td>
+                    <td id="mon9"></td>
+                    <td id="tue9"></td>
+                    <td id="wed9"></td>
+                    <td id="thu9"></td>
+                </tr>
+                <tr>
+                    <th>19:00 - 19:50</th>
+                    <td id="sun10"></td>
+                    <td id="mon10"></td>
+                    <td id="tue10"></td>
+                    <td id="wed10"></td>
+                    <td id="thu10"></td>
+                </tr>
+                <tr>
+                    <th>20:00 - 20:50</th>
+                    <td id="sun11"></td>
+                    <td id="mon11"></td>
+                    <td id="tue11"></td>
+                    <td id="wed11"></td>
+                    <td id="thu11"></td>
+                </tr>
+                <tr>
+                    <th>21:00 - 21:50</th>
+                    <td id="sun12"></td>
+                    <td id="mon12"></td>
+                    <td id="tue12"></td>
+                    <td id="wed12"></td>
+                    <td id="thu12"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
