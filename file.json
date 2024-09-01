@@ -34,6 +34,13 @@
                     "date": "25/8/2024",
                     "attendanceTime": "10:26",
                     "quiz": "#"
+                },
+                {
+                    "topic": "User interface design 1",
+                    "summary": "#",
+                    "date": "1/9/2024",
+                    "attendanceTime": "10:10",
+                    "quiz": "#"
                 }
             ],
             "practicalLectures": [
@@ -337,5 +344,5 @@
 }
 
 ],
-    "version": 26
+    "version": 27
 }
