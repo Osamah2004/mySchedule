@@ -1,3 +1,4 @@
+
 {
     "subjects": [
         {
@@ -26,14 +27,21 @@
                     "date": "18/8/2024",
                     "attendanceTime": "9:06",
                     "quiz": "#"
+                },
+                {
+                    "topic": "Responsibility, Ethics, Effective teamwork",
+                    "summary": "#",
+                    "date": "25/8/2024",
+                    "attendanceTime": "10:26",
+                    "quiz": "#"
                 }
             ],
             "practicalLectures": [
                 {
-                    "topic": "-",
+                    "topic": "Lab1 - Boeing 737 max crash",
                     "summary": "#",
-                    "date": "22/8/2024",
-                    "attendanceTime": "-",
+                    "date": "27/8/2024",
+                    "attendanceTime": "14:34",
                     "quiz": "#"
                 }
             ]
@@ -52,7 +60,7 @@
                 "ميد": 20,
                 "كويز": 15,
                 "الحضور في العملي": 10,
-                "مشروع العملي": 15
+                "مشروع العملي" : 15
             },
             "theoreticalLectures": [
                 {
@@ -61,14 +69,28 @@
                     "date": "21/8/2024",
                     "attendanceTime": "11:38",
                     "quiz": "#"
+                },
+                {
+                    "topic": "Edge cases + Equivalence partitioning + Decision tree + Pairwise testing",
+                    "summary": "#",
+                    "date": "28/8/2024",
+                    "attendanceTime": "11:31",
+                    "quiz": "#"
                 }
             ],
             "practicalLectures": [
                 {
-                    "topic": "<a href='https://drive.google.com/file/d/1Dxu6dTgbN35ORVm8hf2tnrTJh8NCkaFH/view?usp=sharing'>Lab 1</a>",
+                    "topic": "<a href='https://drive.google.com/file/d/1tIHQstbZFXSbpavqMtvg2XGRqW5t2d6l/view?usp=drivesdk'>Lab1</a>",
                     "summary": "#",
                     "date": "25/8/2024",
-                    "attendanceTime": "8:50",
+                    "attendanceTime": "تحضير ورقي",
+                    "quiz": "#"
+                },
+                {
+                    "topic": "Lab2",
+                    "summary": "#",
+                    "date": "1/9/2024",
+                    "attendanceTime": "8:30",
                     "quiz": "#"
                 }
             ]
@@ -83,9 +105,9 @@
             },
             "practicalPart": "#",
             "syllabus": {
-                "نهائي": 40,
-                "تكاليف ومشروع": 40,
-                "نصفي": 20
+                "نهائي" : 40,
+                "تكاليف ومشروع" : 40,
+                "نصفي" : 20
             },
             "theoreticalLectures": [
                 {
@@ -93,6 +115,13 @@
                     "summary": "#",
                     "date": "20/8/2024",
                     "attendanceTime": "17:23",
+                    "quiz": "#"
+                },
+                {
+                    "topic": "Mobile application frameworks",
+                    "summary": "#",
+                    "date": "27/8/2024",
+                    "attendanceTime": "17:01",
                     "quiz": "#"
                 }
             ],
@@ -116,17 +145,19 @@
             },
             "practicalPart": "#",
             "syllabus": {
-                "نهائي": 0,
-                "ميد": 0,
-                "كويز": 0,
-                "عملي": 0
+                "نهائي": 50,
+                "ميد": 20,
+                "واجبات": 20,
+                "مشروع فردي": 5,
+                "مشروع جماعي": 5,
+                "بونص على الكتابة في  الدفتر" : 5
             },
             "theoreticalLectures": [
                 {
-                    "topic": "-",
+                    "topic": "Intro",
                     "summary": "#",
-                    "date": "1/1/2000",
-                    "attendanceTime": "-",
+                    "date": "26/8/2024",
+                    "attendanceTime": "14:06",
                     "quiz": "#"
                 }
             ],
@@ -144,9 +175,9 @@
             "name": "الرياضيات لهندسة البرمجيات",
             "hasPractical": false,
             "theoreticalPart": {
-                "name": "أحمد عبدالفتاح مرجان",
-                "email": "aamorgan",
-                "qeemId": "gtcxr"
+                "name": "محمد  عبدالقادر التونسي",
+                "email": "mmtounsi",
+                "qeemId": "kn62k"
             },
             "practicalPart": "#",
             "syllabus": {
@@ -161,6 +192,20 @@
                     "summary": "#",
                     "date": "22/8/2024",
                     "attendanceTime": "11:23",
+                    "quiz": "#"
+                },
+                {
+                    "topic": "Lambda function",
+                    "summary": "#",
+                    "date": "26/8/2024",
+                    "attendanceTime": "13:58",
+                    "quiz": "#"
+                },
+                {
+                    "topic": "Lambda function 2",
+                    "summary": "#",
+                    "date": "29/8/2024",
+                    "attendanceTime": "11:37",
                     "quiz": "#"
                 }
             ],
@@ -209,7 +254,7 @@
         {
             "ar": "تصميم وإنشاء 2 عملي",
             "Day": "tue",
-            "location": "مع ح 104",
+            "location": "ح105",
             "isCanceled": false,
             "dayNum": 2,
             "Start": 5,
@@ -278,18 +323,19 @@
         }
     ],
     "assignments": [
-        {
-            "subject": "هندسة جوال",
-            "content": "<a href='https://youtu.be/P6dr8C9bnR8'> تثبيت فلاتر </a> و تقديم افكار المشروع",
-            "date": "محاضرة العملي القادمة",
-            "mark": 0
-        },
-        {
-            "subject": "اختبار البرمجيات",
-            "content": "إرسال على الأقل test case واحدة الى <a href='https://uq.sa/cVDmjp'> هذا الرابط </a>",
-            "date": "الثلاثاء القادم",
-            "mark": 0
-        }
-    ],
-    "version": 24
+{
+    "subject" : "تصميم وإنشاء",
+    "content" : "تقديم تقرير عن آلة الTherac-25 يكون على الأقل صفحة واحدة",
+    "date" : "الإثنين القادم",
+    "mark" : 1
+},
+{
+    "subject" : "اختبار البرمجيات",
+    "content" : "حل Lab2",
+    "date" : "يوم الخميس القادم الساعة 2",
+    "mark" : 0
+}
+
+],
+    "version": 25
 }
