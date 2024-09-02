@@ -214,6 +214,13 @@
                     "date": "29/8/2024",
                     "attendanceTime": "11:37",
                     "quiz": "#"
+                },
+                {
+                    "topic": "Chapter 2 pure lambda calculus",
+                    "summary": "#",
+                    "date": "2/9/2024",
+                    "attendanceTime": "13:57",
+                    "quiz": "#"
                 }
             ],
             "practicalLectures": [
@@ -338,5 +345,5 @@
 }
 
 ],
-    "version": 28
+    "version": 29
 }
