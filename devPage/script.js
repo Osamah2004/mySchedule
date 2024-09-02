@@ -26,6 +26,13 @@ function getTime(id){
     let arr = [8, 9, 10, 11, 13, 14, 16, 17, 18, 19, 20, 21];
     return arr[id]
 }
+
+let cookies = JSON.parse(localStorage.getItem('object'));
+if (cookies != null){
+    object = cookies;
+    console.log(object);
+}
+
 function setCell(){
     if (dual.checked) {
         tdId.setAttribute('rowspan', 2);
@@ -54,6 +61,7 @@ function setCell(){
         single : document.getElementById('single').checked
     }
     object.schedule.push(lecture);
+    clearInput();
 };
 document.getElementById('lectureForm').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -70,25 +78,64 @@ document.addEventListener('input', function () {
     document.getElementById('subjectModalButton').disabled = !document.getElementById('subjectForm').checkValidity();
 });
 
-function addHomework(subject,content,duration,mark){
-    debugger;
+//object.assignments.length
+function addHomework(subject, content, duration, mark) {
+    var deleteButton = document.createElement('button');
+    deleteButton.type = 'button';
+    deleteButton.className = 'btn rounded-pill btn-outline-danger';
+    deleteButton.innerHTML = 'حذف التكليف';
+
     let table = document.getElementById('homeworksTable');
     let row = table.insertRow(1);
+    let rowIndex = object.assignments.length; // Store the current length as the row index
+    row.id = rowIndex;
+
     let cell1 = row.insertCell(0);
     cell1.innerHTML = subject;
+
     let cell2 = row.insertCell(1);
     cell2.innerHTML = content;
+
     let cell3 = row.insertCell(2);
     cell3.innerHTML = duration;
+
     let cell4 = row.insertCell(3);
-    if (mark == ""){
+    if (mark == "") {
         mark = 0;
     }
     cell4.innerHTML = mark;
+
+    let cell5 = row.insertCell(4); // Specify the index for the new cell
+    deleteButton.onclick = function () {
+        deleteRow(rowIndex); // Use the stored row index
+    };
+    cell5.appendChild(deleteButton);
+
+    let obj = {
+        subject: subject,
+        content: content,
+        date: duration,
+        mark: mark
+    };
+    object.assignments.push(obj);
+    clearInput();
+}
+
+function saveObject(){
+    localStorage.setItem('object', JSON.stringify(object));
+}
+function clearInput(){
+    let inputs = document.getElementsByTagName('input');
+    for (let i = 0; i < inputs.length; i++) {
+        const input = inputs[i];
+        if (input.type == 'text'){
+            input.value = "";
+        }
+    }
+    saveObject();
 }
 
 function addSubject() {
-    debugger;
     let inputs = document.querySelectorAll('.subject');
     let subject = new Object();
     subject.name = inputs[0].value;
@@ -116,6 +163,7 @@ function addSubject() {
     let div = document.getElementById('devSubjects');
     div.insertBefore(newButton, div.children[0]);
     localStorage.setItem('devSubjects', JSON.stringify(object.subjects[object.subjects.length - 1]));
+    clearInput();
 }
 
 function pracModal(bool){
@@ -133,3 +181,56 @@ tdElements.forEach((td) => {
         td.innerHTML += '<button onclick="setId(' + td.id +')" type="button" data-bs-toggle="modal" data-bs-target="#scheduleModal" class="btn btn-outline-primary">إضافة محاضرة</button>';
     }
 });
+function deleteRow(num) {
+    console.log(num);
+    let row = document.getElementById(num);
+    row.remove();
+    object.assignments.splice(num, 1);
+    saveObject();
+
+    // Update the IDs of the remaining rows
+    let table = document.getElementById('homeworksTable');
+    for (let i = 1; i < table.rows.length; i++) { // Start from 1 to skip the header row
+        table.rows[i].id = i - 1; // Update the row ID
+    }
+
+    // Update the row index for the delete button's onclick function
+    for (let i = 0; i < object.assignments.length; i++) {
+        let deleteButton = table.rows[i + 1].cells[4].getElementsByTagName('button')[0];
+        deleteButton.onclick = function () {
+            deleteRow(i);
+        };
+    }
+}
+
+//load homeworks
+if (object.assignments.length != 0) {
+    for (let i = 0; i < object.assignments.length; i++) {
+        let deleteButton = document.createElement('button');
+        deleteButton.type = 'button';
+        deleteButton.className = 'btn rounded-pill btn-outline-danger';
+        deleteButton.innerHTML = 'حذف التكليف';
+        const element = object.assignments[i];
+        let table = document.getElementById('homeworksTable');
+        let row = table.insertRow(i + 1);
+        row.id = i;
+        let cell1 = row.insertCell();
+        cell1.innerHTML = element.subject;
+
+        let cell2 = row.insertCell();
+        cell2.innerHTML = element.content;
+
+        let cell3 = row.insertCell();
+        cell3.innerHTML = element.date;
+
+        let cell4 = row.insertCell();
+        cell4.innerHTML = element.mark;
+
+        let cell5 = row.insertCell();
+        deleteButton.onclick = function () {
+            deleteRow(i);
+        };
+        cell5.appendChild(deleteButton);
+    }
+
+}
