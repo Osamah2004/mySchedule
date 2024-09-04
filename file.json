@@ -89,6 +89,13 @@
                     "date": "28/8/2024",
                     "attendanceTime": "11:31",
                     "quiz": "#"
+                },
+                {
+                    "topic": "Unit testing + jUnit framework",
+                    "summary": "#",
+                    "date": "4/9/2024",
+                    "attendanceTime": "11:26",
+                    "quiz": "#"
                 }
             ],
             "practicalLectures": [
@@ -375,5 +382,5 @@
             "mark": 0
         }
     ],
-    "version": 1
+    "version": 2
 }
