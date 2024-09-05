@@ -152,6 +152,13 @@
                     "date": "22/8/2024",
                     "attendanceTime": "8:40",
                     "quiz": "#"
+                },
+                {
+                    "topic": "Flutter check + Project discussion",
+                    "summary": "#",
+                    "date": "22/8/2024",
+                    "attendanceTime": "8:40",
+                    "quiz": "#"
                 }
             ]
         },
@@ -241,6 +248,13 @@
                     "date": "2/9/2024",
                     "attendanceTime": "13:57",
                     "quiz": "#"
+                },
+                {
+                    "topic": "Exercises",
+                    "summary": "#",
+                    "date": "5/9/2024",
+                    "attendanceTime": "11:18",
+                    "quiz": "#"
                 }
             ],
             "practicalLectures": [
@@ -296,10 +310,10 @@
             "Single": false
         },
         {
-            "ar": "الرياضيات لهندسة البرمجيات",
+            "ar": "الرياضيات لهندسة البرمجيات (ملغية)",
             "Day": "mon",
             "location": "ح103",
-            "isCanceled": false,
+            "isCanceled": true,
             "dayNum": 1,
             "Start": 5,
             "Time": 13,
@@ -388,5 +402,5 @@
             "mark": 20
         }
     ],
-    "version": 3
+    "version": 4
 }
