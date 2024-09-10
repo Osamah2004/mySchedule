@@ -63,6 +63,13 @@
                     "date": "3/9/2024",
                     "attendanceTime": "14:25",
                     "quiz": "#"
+                },
+                {
+                    "topic": "Figma",
+                    "summary": "#",
+                    "date": "10/9/2024",
+                    "attendanceTime": "14:44",
+                    "quiz": "#"
                 }
             ]
         },
@@ -156,6 +163,20 @@
                     "summary": "#",
                     "date": "27/8/2024",
                     "attendanceTime": "17:01",
+                    "quiz": "#"
+                },
+                {
+                    "topic": "Mobile application design",
+                    "summary": "#",
+                    "date": "3/9/2024",
+                    "attendanceTime": "تحضير الكتروني",
+                    "quiz": "#"
+                },
+                {
+                    "topic": "State management",
+                    "summary": "#",
+                    "date": "10/9/2024",
+                    "attendanceTime": "17:07",
                     "quiz": "#"
                 }
             ],
@@ -331,10 +352,10 @@
             "Single": false
         },
         {
-            "ar": "الرياضيات لهندسة البرمجيات (ملغية)",
+            "ar": "الرياضيات لهندسة البرمجيات",
             "Day": "mon",
             "location": "ح103",
-            "isCanceled": true,
+            "isCanceled": false,
             "dayNum": 1,
             "Start": 5,
             "Time": 13,
@@ -407,9 +428,9 @@
         {
             "subject": "نماذج وطرق",
             "content": "حل الأسئلة في الدفتر",
-            "date": "يوم الجمعة بعد القادم",
+            "date": "يوم الجمعة القادم",
             "mark": 0
         }
     ],
-    "version": 8
+    "version": 9
 }
