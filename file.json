@@ -65,7 +65,7 @@
                     "quiz": "#"
                 },
                 {
-                    "topic": "Figma",
+                    "topic": "Lab3 - Figma+",
                     "summary": "#",
                     "date": "10/9/2024",
                     "attendanceTime": "14:44",
@@ -108,6 +108,13 @@
                     "topic": "Unit testing + jUnit framework",
                     "summary": "#",
                     "date": "4/9/2024",
+                    "attendanceTime": "11:26",
+                    "quiz": "#"
+                },
+                {
+                    "topic": "Fake unit test + stub unit test + mockito test ☕️",
+                    "summary": "#",
+                    "date": "11/9/2024",
                     "attendanceTime": "11:26",
                     "quiz": "#"
                 }
@@ -194,6 +201,13 @@
                     "date": "22/8/2024",
                     "attendanceTime": "8:40",
                     "quiz": "#"
+                },
+                {
+                    "topic": "Flutter check + Project discussion",
+                    "summary": "#",
+                    "date": "22/8/2024",
+                    "attendanceTime": "8:40",
+                    "quiz": "#"
                 }
             ]
         },
@@ -233,6 +247,13 @@
                     "topic": "Mid term",
                     "summary": "#",
                     "date": "9/9/2024",
+                    "attendanceTime": "14:03",
+                    "quiz": "#"
+                },
+                {
+                    "topic": "Lecture 4",
+                    "summary": "#",
+                    "date": "11/9/2024",
                     "attendanceTime": "14:03",
                     "quiz": "#"
                 }
@@ -296,6 +317,13 @@
                     "summary": "#",
                     "date": "5/9/2024",
                     "attendanceTime": "11:18",
+                    "quiz": "#"
+                },
+                {
+                    "topic": "AND/OR",
+                    "summary": "#",
+                    "date": "12/9/2024",
+                    "attendanceTime": "12:14",
                     "quiz": "#"
                 }
             ],
@@ -420,10 +448,16 @@
             "mark": 1
         },
         {
+            "subject": "هندسة جوال",
+            "content": "وضع المزيد من التفاصيل على الفلوشارت",
+            "date": "السبت القادم",
+            "mark": 0
+        },
+        {
             "subject": "إختبار برمجيات",
             "content": "<a href='https://docs.google.com/document/d/18OqKfXpsHfJ6s7xOd-p7zY86-s9MgSSh/edit?usp=sharing&ouid=117432203194630134761&rtpof=true&sd=true'>Lab3</a>",
             "date": "الخميس القادم",
-            "mark": 1
+            "mark": 0
         },
         {
             "subject": "نماذج وطرق",
@@ -432,5 +466,5 @@
             "mark": 0
         }
     ],
-    "version": 9
+    "version": 10
 }
