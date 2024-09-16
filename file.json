@@ -47,6 +47,13 @@
                     "date": "8/9/2024",
                     "attendanceTime": "10:20",
                     "quiz": "#"
+                },
+                {
+                    "topic": "Software architechture design + 1st quiz",
+                    "summary": "#",
+                    "date": "15/9/2024",
+                    "attendanceTime": "10:12",
+                    "quiz": "#"
                 }
             ],
             "practicalLectures": [
@@ -138,6 +145,13 @@
                     "topic": "Lab 3",
                     "summary": "#",
                     "date": "8/9/2024",
+                    "attendanceTime": "8:49",
+                    "quiz": "#"
+                },
+                {
+                    "topic": "Lab 4",
+                    "summary": "#",
+                    "date": "15/9/2024",
                     "attendanceTime": "8:49",
                     "quiz": "#"
                 }
@@ -380,20 +394,10 @@
             "Single": false
         },
         {
-            "ar": "الرياضيات لهندسة البرمجيات",
-            "Day": "mon",
-            "location": "ح103",
-            "isCanceled": false,
-            "dayNum": 1,
-            "Start": 5,
-            "Time": 13,
-            "Single": true
-        },
-        {
-            "ar": "النماذج والطرق",
+            "ar": "النماذج والطرق (ملغية)",
             "Day": "mon",
             "location": "ح105",
-            "isCanceled": false,
+            "isCanceled": true,
             "dayNum": 1,
             "Start": 6,
             "Time": 14,
@@ -446,31 +450,13 @@
             "content": "زيادة تفاصيل على التصميم السابق",
             "date": "محاضرة العملي القادمة",
             "mark": 1
-        },
-        {
-            "subject": "هندسة جوال",
-            "content": "وضع المزيد من التفاصيل على الفلوشارت",
-            "date": "السبت القادم",
-            "mark": 0
-        },
+        }
         {
             "subject": "إختبار برمجيات",
-            "content": "<a href='https://docs.google.com/document/d/18OqKfXpsHfJ6s7xOd-p7zY86-s9MgSSh/edit?usp=sharing&ouid=117432203194630134761&rtpof=true&sd=true'>Lab3</a>",
+            "content": "<a href='https://docs.google.com/document/d/1JLMhtvTgebFptJVLii4sNj5JFwa3jjq1/edit?usp=sharing&ouid=117432203194630134761&rtpof=true&sd=true'>Lab4</a>",
             "date": "الخميس القادم",
             "mark": 0
-        },
-        {
-            "subject": "نماذج وطرق",
-            "content": "حل الأسئلة في الدفتر",
-            "date": "يوم الجمعة القادم",
-            "mark": 0
-        },
-        {
-            "subject": "كويز تصميم وإنشاء",
-            "content": "جميع ما اخذناه",
-            "date": "يوم الأحد القادم",
-            "mark": "???"
         }
     ],
-    "version": 11
+    "version": 12
 }
