@@ -306,7 +306,7 @@ else for (let i = 0; i < parsedJson.assignments.length; i++) {
     cell2.innerHTML = element.content;
     
     let cell3 = row.insertCell();
-    cell3.innerHTML = `<h1><strong>${element.date}</strong></h1>`;
+    cell3.innerHTML = `${element.date}`;
 
     let cell4 = row.insertCell();
     cell4.innerHTML = element.mark;
