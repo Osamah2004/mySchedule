@@ -129,7 +129,7 @@
                     "topic": "Lecture 5",
                     "summary": "#",
                     "date": "18/9/2024",
-                    "attendanceTime": "11:26",
+                    "attendanceTime": "11:22",
                     "quiz": "#"
                 }
             ],
@@ -374,7 +374,7 @@
             "ar": "اختبار البرمجيات عملي",
             "Day": "sun",
             "location": "مع ح4",
-            "isCanceled": false,
+            "isCanceled": true,
             "dayNum": 0,
             "Start": 1,
             "Time": 8,
@@ -404,7 +404,7 @@
             "ar": "النماذج والطرق",
             "Day": "mon",
             "location": "ح105",
-            "isCanceled": false,
+            "isCanceled": true,
             "dayNum": 1,
             "Start": 6,
             "Time": 14,
@@ -455,7 +455,7 @@
         {
             "subject": "ميد تصميم وإنشاء",
             "content": "إلى آخر شيء اخذناه",
-            "date": "محاضرة النظري القادمة (بعد اسبوعين)",
+            "date": "محاضرة النظري القادمة",
             "mark": 20
         },
         {
@@ -477,5 +477,5 @@
             "mark": 0
         }
     ],
-    "version": 13
+    "version": 14
 }
