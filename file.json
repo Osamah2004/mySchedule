@@ -124,6 +124,13 @@
                     "date": "11/9/2024",
                     "attendanceTime": "11:26",
                     "quiz": "#"
+                },
+                {
+                    "topic": "Lecture 5",
+                    "summary": "#",
+                    "date": "18/9/2024",
+                    "attendanceTime": "11:26",
+                    "quiz": "#"
                 }
             ],
             "practicalLectures": [
@@ -354,7 +361,7 @@
     ],
     "schedule": [
         {
-            "ar": "اختبار البرمجيات نظري",
+            "ar": "اختبار البرمجيات نظري (ميد)",
             "Day": "wed",
             "location": "ح103",
             "isCanceled": false,
@@ -374,10 +381,10 @@
             "Single": false
         },
         {
-            "ar": "تصميم وإنشاء 2 نظري (كويز)",
+            "ar": "تصميم وإنشاء 2 نظري",
             "Day": "sun",
             "location": "ح104",
-            "isCanceled": false,
+            "isCanceled": true,
             "dayNum": 0,
             "Start": 3,
             "Time": 10,
@@ -394,10 +401,10 @@
             "Single": false
         },
         {
-            "ar": "النماذج والطرق (ملغية)",
+            "ar": "النماذج والطرق",
             "Day": "mon",
             "location": "ح105",
-            "isCanceled": true,
+            "isCanceled": false,
             "dayNum": 1,
             "Start": 6,
             "Time": 14,
@@ -446,10 +453,22 @@
     ],
     "assignments": [
         {
-            "subject": "تصميم وإنشاء عملي",
-            "content": "زيادة تفاصيل على التصميم السابق",
-            "date": "محاضرة العملي القادمة",
-            "mark": 1
+            "subject": "ميد تصميم وإنشاء",
+            "content": "إلى آخر شيء اخذناه",
+            "date": "محاضرة النظري القادمة (بعد اسبوعين)",
+            "mark": 20
+        },
+        {
+            "subject": "ميد اختبار البرمجيات",
+            "content": "إلى سلايد ١٢٢",
+            "date": "محاضرة النظري القادمة",
+            "mark": 20
+        },
+        {
+            "subject": "ميد  هندسة جوال",
+            "content": "كل ما اخذناه",
+            "date": "الخميس بعد القادم",
+            "mark": 20
         },
         {
             "subject": "إختبار برمجيات",
@@ -458,5 +477,5 @@
             "mark": 0
         }
     ],
-    "version": 12
+    "version": 13
 }
